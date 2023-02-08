@@ -1,0 +1,317 @@
+@use './partials/mixins' as *;
+@use './partials/variables' as *;
+@use './partials/fonts' as *;
+
+// header
+
+.header {
+    @include mobile {
+        // opacity: 0.5;
+        // display: flex;
+        // padding-left: 16px;
+        // padding-right: 16px;
+        // border: green solid;
+        background-color: $bandSite-Black;
+        // padding: 20px;
+        // height: 70px;
+        display: flex;
+        flex-direction: column;
+        gap: 10%;
+    }
+
+    .logo-container {
+        @include mobile {
+            padding-top: 8px;
+            display: flex;
+            justify-content: center;
+            height: 4rem;
+
+            &__image {
+                @include mobile {
+                    width: 35%;
+                }
+            }
+        }
+
+
+    }
+
+    @include tablet {
+        display: flex;
+        padding-left:16px;
+        padding-right: 16px;
+    }
+
+    @include desktop {
+
+    }
+}
+
+// Text size: 24px | Line height: 32px | Text weight: Bold 700
+.title {
+    // font-size: 24px;
+    // line-height: 32px;
+    // font-weight: 700;
+    // color: $white;
+    @include heading-text;
+    padding: 8px;
+    // border: red solid;
+    text-align: center;
+    height: 50%;
+}
+
+.nav {
+    @include mobile {
+        height: 50%;
+        // border: blue solid;
+        // padding: 8px;
+        // width: 100%;
+    }
+
+    &__list {
+        height: 100%;
+        width: 100%;
+        // text-decoration: none;
+        display: flex;
+        // text-align: center;
+        // border: blue solid;
+        list-style: none;
+        // text-align: center;
+        // border: green solid;
+        justify-content: space-around;
+        // align-items: ;
+
+    }
+
+    &__item {
+        @include mobile {
+            // border: yellow solid;
+            // display: block;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            // height: 50px;
+            // text-align: center;
+        }
+
+        // @include tablet {
+        //     padding-left: 36px;
+        // }
+    }
+
+    &__link {
+        // Text size: 10px | Line height: 20px | Text weight: Bold 700
+        text-decoration: none;
+        color: $white;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 700;
+        // width: 50%;
+        // padding: 40px;
+        width: 100%;
+        border: red solid;
+        text-align: center;
+        padding-bottom: 16px;
+        // @include mobile {
+        //     padding-bottom: 20px;
+        // }
+    }
+
+    &__link--active {
+        width: 100%;
+        border-bottom: white 4px solid;
+    }
+}
+
+// .anchor-container {
+//     width: 50%;
+//     height: 100%;
+//     // padding: 8px;
+//     border-bottom: white thick;
+// }
+
+.nav__item {
+    // border: yellow solid;
+    // padding: 20px;
+}
+
+li {
+    // border: yellow solid;
+    // font-size: 40px;
+    // box-sizing: border-box;
+    // background-color: green solid;
+}
+
+.background {
+    // opacity: 0.9;
+    height: 250px;
+    background-image: url('../assets/Images/hero-bio.jpg');
+    background-size: cover;
+    display: flex;
+    background-color: lightgray;
+    background-blend-mode: darken;
+    // align-content: center;
+    // justify-content: center;
+    // align-content: center;
+    align-items: center
+    
+}
+
+.text {
+    // margin-top: 60px;
+    margin-left: 16px;
+    @include heading-text;
+    // margin:auto;
+    // text-align: center;
+}
+
+.main {
+    @include mobile {
+        display: flex;
+        flex-direction: column;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 24px;
+    }
+}
+
+.about-section {
+    
+    &__title {
+        @include mobile {
+            padding-bottom: 16px;
+        }
+    }
+
+    &__image {
+        @include mobile {
+            width: 100%;
+            // height: 50vh;        
+        }
+    }
+
+    &__quote {
+        @include mobile {
+            padding-top: 16px;
+            // margin-bottom: 24px;
+        }
+    }
+
+
+}
+
+// .main-title {
+//     padding-bottom: 16px;
+// }
+
+.band {
+    // width: 100vw;
+    width: 100%;
+    // height: 50vw;
+    padding-bottom: 16px;
+
+    &__title {
+        @include mobile {
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+    }
+
+    &__description {
+        @include mobile {
+            padding-bottom: 16px;
+        }
+    }
+}
+
+.photo-galary {
+    background-color: $albaster;
+    // height: 100px;
+    border: red solid;
+    @include mobile {
+        // @include mobile {
+            display: flex;
+            flex-direction: column;
+            padding-top: 16px;
+            // margin-right: 16px;
+            // margin-left: 16px;
+            // padding-left: 16px;
+            // padding-right: 16px;
+        // }
+    }
+
+    @include tablet {
+        // display: flex;
+        // padding-left: 16px;
+        // padding-right: 16px;
+
+    }
+
+    &__title {
+        @include mobile {
+            // padding-top: 16px;
+            padding-left: 16px;
+            // padding-right: 16px;
+        }
+
+        @include tablet {
+            // @include mobile {
+                // padding-top: 16px;
+                padding-left: 56px;
+                // padding-right: 16px;
+            // }
+        }
+    }
+
+    &__list {
+        @include mobile {
+            padding-top: 16px;
+            // padding-bottom: 24px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        // &__list {
+        @include tablet {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding-top: 16px;
+            gap: 8px;
+            // padding-right: 16px;
+            // padding-left: 16px;
+        }
+
+ 
+    }
+
+    &__photo {
+        // border: ;
+        @include mobile {
+            // display: flex;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            // padding-right: 8px;
+            // padding-left: 8px;
+            width: 100%;
+        }
+
+        @include tablet {
+            width: 24vw;
+            // width: 30%;
+            // width: 18rem;
+            height: 10rem;
+            // padding-top: 16px;
+            // padding-left: 16px;
+            // padding-right: 8px;
+
+        }
+
+    }
+
+}
+
+// .band-title {
+//     padding-top: 24px;
+//     padding-bottom: 16px;
+// }

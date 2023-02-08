@@ -1,0 +1,188 @@
+@font-face {
+  font-family: AvenirNext;
+  src: url("../assets/Font");
+}
+@media (min-width: 300px) {
+  .header {
+    background-color: #323232;
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+  }
+}
+@media (min-width: 300px) {
+  .header .logo-container {
+    padding-top: 8px;
+    display: flex;
+    justify-content: center;
+    height: 4rem;
+  }
+}
+@media (min-width: 300px) and (min-width: 300px) {
+  .header .logo-container__image {
+    width: 35%;
+  }
+}
+@media (min-width: 768px) {
+  .header {
+    display: flex;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.title {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 8px;
+  text-align: center;
+  height: 50%;
+}
+
+@media (min-width: 300px) {
+  .nav {
+    height: 50%;
+  }
+}
+.nav__list {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+@media (min-width: 300px) {
+  .nav__item {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+.nav__link {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  width: 100%;
+  border: red solid;
+  text-align: center;
+  padding-bottom: 16px;
+}
+.nav__link--active {
+  width: 100%;
+  border-bottom: white 4px solid;
+}
+
+.background {
+  height: 250px;
+  background-image: url("../assets/Images/hero-bio.jpg");
+  background-size: cover;
+  display: flex;
+  background-color: lightgray;
+  background-blend-mode: darken;
+  align-items: center;
+}
+
+.text {
+  margin-left: 16px;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+@media (min-width: 300px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 24px;
+  }
+}
+
+@media (min-width: 300px) {
+  .about-section__title {
+    padding-bottom: 16px;
+  }
+}
+@media (min-width: 300px) {
+  .about-section__image {
+    width: 100%;
+  }
+}
+@media (min-width: 300px) {
+  .about-section__quote {
+    padding-top: 16px;
+  }
+}
+
+.band {
+  width: 100%;
+  padding-bottom: 16px;
+}
+@media (min-width: 300px) {
+  .band__title {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+@media (min-width: 300px) {
+  .band__description {
+    padding-bottom: 16px;
+  }
+}
+
+.photo-galary {
+  background-color: #FAFAFA;
+  border: red solid;
+}
+@media (min-width: 300px) {
+  .photo-galary {
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+  }
+}
+@media (min-width: 300px) {
+  .photo-galary__title {
+    padding-left: 16px;
+  }
+}
+@media (min-width: 768px) {
+  .photo-galary__title {
+    padding-left: 56px;
+  }
+}
+@media (min-width: 300px) {
+  .photo-galary__list {
+    padding-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media (min-width: 768px) {
+  .photo-galary__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 16px;
+    gap: 8px;
+  }
+}
+@media (min-width: 300px) {
+  .photo-galary__photo {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .photo-galary__photo {
+    width: 24vw;
+    height: 10rem;
+  }
+}/*# sourceMappingURL=bio.css.map */

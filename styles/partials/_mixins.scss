@@ -1,0 +1,32 @@
+@use './variables' as *;
+
+@mixin tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+// Do this later
+@mixin mobile {
+    // @media (min-width: variables.$mobile-width) {
+    //     @content;
+    // }
+    @media (min-width: $mobile-width) {
+        @content;
+    }
+}
+// max-width: $desktop-width
+
+@mixin heading-text {
+
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    color: $white;
+}
