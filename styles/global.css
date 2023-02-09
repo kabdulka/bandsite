@@ -2,9 +2,7 @@ body * {
   margin: 0;
   padding: 0;
   text-decoration: none;
-  font-family: "Open Sans";
-  font-weight: 400;
-  font-weight: normal;
+  box-sizing: border-box;
 }
 
 body {
