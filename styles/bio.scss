@@ -16,20 +16,15 @@ body {
 .header {
     @include mobile {
         // opacity: 0.5;
-        // display: flex;
-        // padding-left: 16px;
-        // padding-right: 16px;
-        // border: green solid;
+
         height: 7rem;
         background-color: $bandSite-Black;
-        // padding: 20px;
-        // height: 70px;
+
         border: blue solid;
 
         display: flex;
         flex-direction: column;
-        // align-items: baseline;
-        // gap: 10%;
+
     }
 
     &__logo-container {
@@ -62,9 +57,9 @@ body {
     @include tablet {
         // display: flex;
         flex-direction: row;
-        padding-left: 3rem;
+        padding-left: 2.25rem;
         // padding-right: 16px;
-        gap: 5rem;
+        gap: 6rem;
     }
 
     @include desktop {
@@ -115,18 +110,9 @@ body {
 
         @include tablet {
             border: yellow solid;
-            gap: 4rem;
+            gap: 5rem;
             // align-items: center;
             align-content: space-between;
-        }
-
-        &__link {
-            
-            @include mobile {
-                // font-size: 3rem;
-                // font-weight: 600;
-            }
-
         }
 
     } // end list
@@ -163,17 +149,14 @@ body {
         text-decoration: none;
         color: $white;
         font-size: 14px;
-        line-height: 20px;
+        // line-height: 20px;
         font-weight: 700;
         // width: 50%;
         // padding: 40px;
         width: 100%;
         border: red solid;
         text-align: center;
-        padding-bottom: 16px;
-        // @include mobile {
-        //     padding-bottom: 20px;
-        // }
+
     }
 
     &__link--active {
@@ -182,80 +165,152 @@ body {
     }
 }
 
-// .anchor-container {
-//     width: 50%;
-//     height: 100%;
-//     // padding: 8px;
-//     border-bottom: white thick;
-// }
 
-.nav__item {
-    // border: yellow solid;
-    // padding: 20px;
-}
-
-li {
-    // border: yellow solid;
-    // font-size: 40px;
-    // box-sizing: border-box;
-    // background-color: green solid;
-}
 
 .background {
-    // opacity: 0.9;
-    height: 250px;
-    background-image: url('../assets/Images/hero-bio.jpg');
-    background-color: black;
-    opacity: 0.8;
-    background-size: cover;
-    display: flex;
-    background-color: lightgray;
-    background-blend-mode: darken;
-    // align-content: center;
-    // justify-content: center;
-    // align-content: center;
-    align-items: center
+
+    //TODO
+    @include mobile {
+                // opacity: 0.9;
+        height: 16rem;
+        background-image: url('../assets/Images/hero-bio.jpg');
+        // background-color: black;
+        opacity: 0.8;
+        background-size: cover;
+        display: flex;
+        background-color: darkgray;
+        background-blend-mode: darken;
+    
+        align-items: center
+    }
+
+    //TODO
+    @include tablet {
+        // width: 100%;
+        // height: 30rem;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        // height: 100%;
+        // max-width: 100%;
+        max-height: 60rem;
+        // aspect-ratio: 3 / 2;
+    }
     
 }
 
 .text {
     // margin-top: 60px;
-    margin-left: 16px;
-    @include heading-text;
-    // margin:auto;
-    // text-align: center;
+ 
+    @include mobile {
+        margin-left: 1rem;
+        // @include heading-text;
+        font-size: 2.5rem;
+        // line-height: 32px;
+        font-weight: 600;
+        color: $white;
+    }
+
+    @include tablet {
+        margin-left: 2.25rem;
+        font-size: 4.5rem;
+        color: $white;
+        font-weight: 600;
+
+    }
+
 }
+
+// ------------------------------ main ------------------------------ //
 
 .main {
     @include mobile {
         display: flex;
         flex-direction: column;
-        padding-left: 16px;
-        padding-right: 16px;
-        padding-top: 24px;
+        // padding-left: 16px;
+        // padding-right: 16px;
+        // padding-top: 24px;
+    }
+
+    &__title {
+        @include mobile {
+            // padding-bottom: 16px;
+            font-size: 2.25rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        @include tablet {
+            padding-left: 2.25rem;
+            padding-right: 2.25rem;
+            font-size: 3rem;
+            font-weight: 600;
+            margin-top: 3rem;
+            // margin-bottom: 2.25rem;
+        }
     }
 }
 
+.section-intro {
+    border: green solid;
+}
+
 .about-section {
-    
-    &__title {
-        @include mobile {
-            padding-bottom: 16px;
-        }
+
+    border: red solid;
+    @include mobile {
+        display: flex;
+        flex-direction: column;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    @include tablet {
+        // display: flex;
+        // flex-direction: column;
+        padding-right: 7.25rem;
+        padding-left: 7.25rem;
+        padding-bottom: 2.25rem;
     }
 
     &__image {
         @include mobile {
             width: 100%;
+            margin-top: 1rem;
             // height: 50vh;        
+        }
+
+        @include tablet {
+            width: 75%;
+            margin-top: 2.25rem;
         }
     }
 
     &__quote {
         @include mobile {
-            padding-top: 16px;
-            // margin-bottom: 24px;
+            line-height: 2;
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin-top: 0.5rem;
         }
+
+        @include tablet {
+            line-height: 2;
+            font-weight: 600;
+            font-size: 1.75rem;
+            margin-top: 1rem;
+
+            &--tablet {
+                line-height: 2;
+                font-weight: 600;
+                font-size: 1.25rem;
+                margin-top: 0.5rem;
+            }
+        }
+
+
     }
 
 
@@ -269,18 +324,54 @@ li {
     // width: 100vw;
     width: 100%;
     // height: 50vw;
-    padding-bottom: 16px;
+    // padding-bottom: 16px;
+
+    @include mobile {
+
+    }
+
+    @include tablet {
+        margin-top: 3rem;
+    }
 
     &__title {
         @include mobile {
-            padding-top: 24px;
-            padding-bottom: 24px;
+            // padding-top: 24px;
+            // padding-bottom: 24px;
+            margin-top: 2rem;
+            font-size: 1.25rem;
+            font-weight: 500;
+            border: red solid;
+        }
+
+        @include tablet {
+            // padding-top: 24px;
+            // padding-bottom: 24px;
+            // margin-top: 5rem;
+            font-size: 2rem;
+            font-weight: 600;
+            border: red solid;
         }
     }
 
     &__description {
+
         @include mobile {
-            padding-bottom: 16px;
+
+        }
+
+        @include tablet {
+            display: flex;
+            gap: 2rem;
+        }
+    }
+
+    &__description-text {
+        @include mobile {
+            line-height: 2;
+            margin-top: 1rem;
+            font-weight: 500;
+            // padding-bottom: 16px;
         }
     }
 }
@@ -321,6 +412,7 @@ li {
         }
 
         @include tablet {
+
             padding-top: 3rem;
             padding-bottom: 2.25rem;
             font-size: 3rem;
@@ -358,6 +450,8 @@ li {
         }
     }
 
+    // gap and justify content overlap. Use one or ther other 
+    // try not to use both
     &__photo {
         // border: ;
         @include mobile {
@@ -366,7 +460,8 @@ li {
 
         @include tablet {
             // width: 24vw;
-            width: 30%;
+            // flex 1 lets an element grow
+            width: 28%;
             flex: 1;
         }
 
@@ -394,30 +489,32 @@ li {
         // padding-left: 1rem;
         // padding-right: 1rem;
         // padding-bottom: 1rem;
-
-        padding: 1.5rem;
+        color: $white;
+        padding: 1rem;
     }
 
     @include tablet {
-        padding-top: 3rem;
+        // padding-top: 3rem;
         padding-left: 2.25rem;
         padding-right: 2.25rem;
         padding-bottom: 3rem;
     }
 
     @include desktop {
-        padding-top: 2rem;
-        padding-left: 5rem;
-        padding-right: 5rem;
+        // padding-top: 2rem;
+        // padding-left: 5rem;
+        // padding-right: 5rem;
     }
 }
 
-.flex-container {
-    border: red solid;
-    color: $white;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+.footer-wrapper {
+    @include mobile {
+
+    }
+
+    @include tablet {
+        position: relative;
+    }
 }
 
 .footer-intro {
@@ -427,6 +524,8 @@ li {
         flex-direction: column;
         border: white solid;
         gap: 1rem;
+        // align-items: center;
+        // justify-content: center
     }
 
     @include tablet {
@@ -434,9 +533,34 @@ li {
         border: green solid;
         // display: flex;
         flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 2rem;
+        // justify-content: flex-start;
+        // align-items: center;
+        margin-top: 3rem;
+        gap: 3rem;
+    }
+}
+
+.footer-title {
+    font-weight: 600;
+    border: blue solid;
+    font-size: 3rem;
+    color: $white;
+}
+
+.flex-container {
+    @include mobile {
+
+        border: red solid;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        // position: relative;
+    }
+
+    @include tablet {
+        margin-top: 3rem;
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
 
@@ -444,9 +568,13 @@ li {
 
     @include mobile {
         display: flex;
-        gap: 2rem;
+        gap: 3rem;
         border: green solid;
-        padding-bottom: 2rem;
+        align-items: center;
+        // justify-content: center;
+        // padding-bottom: 2rem;
+        // align-content: space-around;
+        
     }
 
     @include tablet {
@@ -462,12 +590,17 @@ li {
             border: yellow solid;   
             height: 2rem;
             width: 2rem;
+            // display:flex;
+            // align-items: center;
+            // align-self:center;
+            // vertical-align: middle;
+            // margin:auto;
         }
 
         @include tablet {
-          
-            height: 1.75rem;
-            width: 1.5rem;
+            // align-self:center;
+            // height: 1.75rem;
+            // width: 1.5rem;
             // margin-top: 0.5rem;
         }
 
@@ -477,11 +610,7 @@ li {
     }
 }
 
-.footer-title {
-    font-weight: 600;
-    border: blue solid;
-    font-size: 2rem;
-}
+
 
 .contact {
 
@@ -489,40 +618,46 @@ li {
         // padding-bottom: 8px;
         // margin-bottom: 16px;
         // border: red solid;
-        font-size: 1.25rem;
-        padding-bottom: 1rem;
+        font-size: 1rem;
+        margin-bottom: 1rem;
         
         &__container {
 
             @include mobile {
-                padding-bottom: 1rem;
+                margin-bottom: 1rem;
             }
         }
     }
 
     @include tablet {
         display: flex;
-        // gap: 3rem;
-        border: red solid;
+        flex-direction: column;
+        gap: 1.5rem;
+        border: orange solid;
+        width: 28%;
+        flex: 1;
     }
 }
 
+// bandsite logo image wrapper
 .logo-image_wrapper {
     display: flex;
     // justify-content: left;
 }
 
+// bandsite logo image
 .logo-image_wrapper--tablet {
     @include tablet {
         position: absolute;
-        bottom: 16.875rem;
-        right: 3.125rem;
+        // bottom: 12.5rem;
+        // right: 1rem;
+        bottom: 83%;
+        right: 0%;
     }
 
 }
 
 .footer__logo-image {
-
     @include mobile {
         // max-height: 1.25rem;
         // max-width: 7.5rem;
@@ -530,7 +665,6 @@ li {
         margin-bottom: 1.5rem;
         margin-top: 3rem;
         border: green solid;
-
     }
 
     // TOTO
@@ -543,6 +677,10 @@ li {
         margin-top: 3rem;
         border: green solid;
     }
+}
+
+.copyright {
+    margin-top: 2rem;
 }
 
 

@@ -38,21 +38,27 @@
 
     <main class="main">
 
+        <h2 class="main__title"> About the Musicians </h2>
+
         <section class="about-section">
             
             <article class="section-intro">
-                <h2 class="about-section__title"> About the Musicians </h2>
                 <img class="about-section__image" src="./assets/Images/band.jpg" alt="">
                 <p class="about-section__quote"> “We push each other to be the best. It’s not
                     uncommon for one of us to say ‘this needs
                     to be better, back to the drawing board’”
+                   
+                </p>
+                <p class="about-section__quote about-section__quote--tablet about-section__quote--desktop"> 
                     - Bryan Teddy, lead vocalist of The Bees
-                    Knees </p>
+                    Knees 
+                </p>
             </article>
 
             <article class="band">
                 <h3 class="band__title"> The Bees Knees </h3>
-                <p class="band__description"> 
+                <div class="band__description">
+                <p class="band__description-text"> 
                     The Bees Knees is a pop rock band originating
                     from San Francisco, California. The band
                     consists of lead vocalist Bryan Teddy, guitarist
@@ -66,7 +72,7 @@
                     confident the band could succeed even further,
                     pushing them to sign with Magenta Records. 
                 </p>
-                <p class="band__description">
+                <p class="band__description-text">
                     From there, the band has soared, gaining
                     international recognition and ranking in the
                     top 10 on the Poster Charts. New fans
@@ -81,12 +87,13 @@
                     second studio album, looking to be released in
                     late 2021.
                 </p>
+                </div>
             </article>
 
         </section>
 
     </main>
-
+    <!-- ----------------------------- main ----------------------------- -->
     <section class="photo-galary">
 
         <h2 class="photo-galary__title"> Photo Galary </h2>
@@ -107,17 +114,17 @@
 
     <!-------------------------------- footer -------------------------------->
     <footer class="footer">
+        <div class="footer-wrapper">
+        <article class="footer-intro">
+            <h2 class="footer-title"> Get in Touch </h2>
+            <div class="icon-container">
+                <img class="icon-container__image" src="./assets/Icons/SVG/Icon-instagram.svg" alt="">
+                <img class="icon-container__image" src="./assets/Icons/SVG/Icon-facebook.svg" alt="">
+                <img class="icon-container__image" src="./assets/Icons/SVG/Icon-twitter.svg" alt="">
+            </div>
+        </article>
 
         <div class="flex-container">
-
-            <article class="footer-intro">
-                <h2 class="footer-title"> Get in Touch </h2>
-                <div class="icon-container">
-                    <img class="icon-container__image" src="./assets/Icons/SVG/Icon-instagram.svg" alt="">
-                    <img class="icon-container__image" src="./assets/Icons/SVG/Icon-facebook.svg" alt="">
-                    <img class="icon-container__image" src="./assets/Icons/SVG/Icon-twitter.svg" alt="">
-                </div>
-            </article>
 
             <article class="contact">
                 <div class="contact__container">
@@ -161,13 +168,15 @@
                 </div>
             </article>
 
-            <div class="logo-image_wrapper logo-image_wrapper--tablet logo-image_wrapper--desktop">
-                <img class="footer__logo-image" src="./assets/Logo/Logo-bandsite.svg" alt="">
-            </div>
-            <p class="copyright"> Copyright The Bees Knees © 2021 All Rights Reserved </p>
-
         </div>
 
+        <div class="logo-image_wrapper logo-image_wrapper--tablet logo-image_wrapper--desktop">
+            <img class="footer__logo-image" src="./assets/Logo/Logo-bandsite.svg" alt="">
+        </div>
+
+        <p class="copyright"> Copyright The Bees Knees © 2021 All Rights Reserved </p>
+
+        </div>
     </footer>
 
 </body>
