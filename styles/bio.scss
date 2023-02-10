@@ -27,33 +27,6 @@ body {
 
     }
 
-    &__logo-container {
-        @include mobile {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: green solid;
-            height: 100%;
-            // padding-top: 8px;
-            // display: flex;
-            // justify-content: center;
-            // margin: auto;
-            // align-content: space-around;
-            // height: 4rem;
-            // vertical-align: middle;
-            // text-align: center;
-            
-            &__image {
-                @include mobile {
-                    // margin-top: 1.5rem;
-                    height: 1.7rem;
-                    // width: 9rem;
-                    // width: 35%;
-                }
-            }
-        }
-    }
-
     @include tablet {
         // display: flex;
         flex-direction: row;
@@ -63,8 +36,40 @@ body {
     }
 
     @include desktop {
-
+        height: 6rem;
+        // flex-direction: row;
+        padding-left: 9rem;
+        gap: 4rem;
     }
+
+    &__logo-container {
+        @include mobile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: green solid;
+            height: 100%;
+
+            
+            &__image {
+                @include mobile {
+                    height: 1.75rem;
+                }
+
+                @include tablet {
+
+                }
+
+                @include desktop {
+                    height: 1.15rem;
+                }
+            }
+
+            
+        }
+    }
+
+
 }
 
 // Text size: 24px | Line height: 32px | Text weight: Bold 700
@@ -115,16 +120,33 @@ body {
             align-content: space-between;
         }
 
+        @include desktop {
+            gap: 2rem;
+        }
+
     } // end list
     
-    .anchor-container {
-        height: 100%;
-        // border: white solid;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.25rem;
-        font-weight: 600;
+    &__anchor-container {
+
+        @include mobile {
+            height: 100%;
+            // border: white solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        @include tablet {
+            
+            // font-size: 1.15rem;
+            
+        }
+
+        @include desktop {
+            font-size: 0.875rem;
+        }
     }
 
     &__item {
@@ -145,23 +167,45 @@ body {
     }
 
     &__link {
-        // Text size: 10px | Line height: 20px | Text weight: Bold 700
-        text-decoration: none;
-        color: $white;
-        font-size: 14px;
-        // line-height: 20px;
-        font-weight: 700;
-        // width: 50%;
-        // padding: 40px;
-        width: 100%;
-        border: red solid;
-        text-align: center;
+
+        @include mobile {
+            // Text size: 10px | Line height: 20px | Text weight: Bold 700
+            text-decoration: none;
+            color: $white;
+            font-size: 14px;
+            // line-height: 20px;
+            font-weight: 700;
+            // width: 50%;
+            // padding: 40px;
+            width: 100%;
+            border: red solid;
+            text-align: center;
+        }
+
+        @include tablet {
+
+        }
+
+        @include desktop {
+            font-size: 0.875rem;
+        }
+
 
     }
 
     &__link--active {
-        width: 100%;
-        border-bottom: white 4px solid;
+        @include mobile {
+            width: 100%;
+            border-bottom: white 4px solid;
+        }
+
+        @include tablet {
+
+        }
+
+        @include desktop {
+            border-bottom: white 3px solid;
+        }
     }
 }
 
@@ -172,7 +216,7 @@ body {
     //TODO
     @include mobile {
                 // opacity: 0.9;
-        height: 16rem;
+        height: 17rem;
         background-image: url('../assets/Images/hero-bio.jpg');
         // background-color: black;
         opacity: 0.8;
@@ -186,14 +230,11 @@ body {
 
     //TODO
     @include tablet {
-        // width: 100%;
-        // height: 30rem;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        // height: 100%;
-        // max-width: 100%;
-        max-height: 60rem;
-        // aspect-ratio: 3 / 2;
+        height: 37rem;
+    }
+
+    @include desktop {
+        height: 38.75rem;
     }
     
 }
@@ -212,12 +253,14 @@ body {
 
     @include tablet {
         margin-left: 2.25rem;
-        font-size: 4.5rem;
-        color: $white;
-        font-weight: 600;
-
+        font-size: 5rem;
+    
     }
 
+    @include desktop {
+        margin-left: 8rem;
+        font-size: 3.75rem;
+    }
 }
 
 // ------------------------------ main ------------------------------ //
@@ -250,6 +293,12 @@ body {
             margin-top: 3rem;
             // margin-bottom: 2.25rem;
         }
+
+        @include desktop {
+            padding-left: 8.5rem;
+            font-size: 2.25rem;
+            // font-weight: 500;
+        }
     }
 }
 
@@ -275,6 +324,11 @@ body {
         padding-bottom: 2.25rem;
     }
 
+    @include desktop {
+        padding-left: 12.5rem;
+        padding-right: 12.5rem;
+    }
+
     &__image {
         @include mobile {
             width: 100%;
@@ -283,7 +337,7 @@ body {
         }
 
         @include tablet {
-            width: 75%;
+            width: 100%;
             margin-top: 2.25rem;
         }
     }
@@ -306,6 +360,20 @@ body {
                 line-height: 2;
                 font-weight: 600;
                 font-size: 1.25rem;
+                margin-top: 0.5rem;
+            }
+        }
+
+        @include desktop {
+            line-height: 1.5;
+            font-weight: 600;
+            font-size: 1.35rem;
+            margin-top: 1rem;
+
+            &--desktop {
+                line-height: 2;
+                font-weight: 600;
+                font-size: 1rem;
                 margin-top: 0.5rem;
             }
         }
@@ -350,7 +418,12 @@ body {
             // margin-top: 5rem;
             font-size: 2rem;
             font-weight: 600;
-            border: red solid;
+        }
+
+        @include desktop {
+            margin-top: 1rem;
+            font-size: 1.55rem;
+            font-weight: 525;
         }
     }
 
@@ -371,6 +444,21 @@ body {
             line-height: 2;
             margin-top: 1rem;
             font-weight: 500;
+            // padding-bottom: 16px;
+        }
+
+        @include tablet {
+            // line-height: 2;
+            // margin-top: 1rem;
+            // font-weight: 500;
+            // padding-bottom: 16px;
+        }
+
+        @include desktop {
+            line-height: 1.75;
+            margin-top: 1rem;
+            font-weight: 500;
+            font-size: 0.875rem;
             // padding-bottom: 16px;
         }
     }
