@@ -2,12 +2,33 @@
 @use './partials/variables' as *;
 @use './partials/fonts' as *;
 
-// header
+// global declarations
 
 body {
-    // background-color: red;
+    margin: 0;
+    padding: 0;
     font-family: 'AvenirNext LT Pro';
     
+}
+
+body * {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+  
+  
+  a {
+    text-decoration: none;
+  }
+
+
+
+img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 // ----------------------------- header/nav ----------------------------- //
@@ -15,12 +36,8 @@ body {
 
 .header {
     @include mobile {
-        // opacity: 0.9;
-        height: 7rem;
-        //TODO don't name scss variables with regular colour names
+        height: 5rem;
         background-color: $bandSite-Black;
-        // border: blue solid;
-
         display: flex;
         flex-direction: column;
 
@@ -44,16 +61,17 @@ body {
     &__logo-container {
 
         @include mobile {
+            padding-top: 0.5rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: green solid;
+            // border: green solid;
             height: 100%;
 
             
             &__image {
                 @include mobile {
-                    height: 1.125rem;
+                    height: 1.2rem;
                 }
 
                 @include tablet {
@@ -67,6 +85,10 @@ body {
 
             
         }
+
+        @include tablet {
+            padding-top: 0rem;
+        }
     }
 
 
@@ -74,13 +96,8 @@ body {
 
 // Text size: 24px | Line height: 32px | Text weight: Bold 700
 .title {
-    // font-size: 24px;
-    // line-height: 32px;
-    // font-weight: 700;
-    // color: $white;
     @include heading-text;
     padding: 8px;
-    // border: red solid;
     text-align: center;
     height: 50%;
 }
@@ -88,9 +105,6 @@ body {
 .nav {
     @include mobile {
         height: 50%;
-        // border: blue solid;
-        // padding: 8px;
-        // width: 100%;
     }
 
     @include tablet {
@@ -99,26 +113,16 @@ body {
 
     &__list {
 
-        // TODO mobile adjustment
         @include mobile {
             height: 100%;
             width: 100%;
-            // text-decoration: none;
             display: flex;
-            // text-align: center;
-            // border: blue solid;
             list-style: none;
-            // text-align: center;
-            // border: green solid;
             justify-content: space-around;
-            // align-items: ;
         }
 
         @include tablet {
-            border: yellow solid;
             gap: 3.4rem;
-            // align-items: center;
-            // align-content: space-between;
         }
 
         @include desktop {
@@ -135,12 +139,21 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 0.875rem;
-            font-weight: 600;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding-bottom: 0.5rem;
+            // border-bottom: white 0.25rem solid;
+
+            @include mobile {
+                // nav__anchor-container--active
+                &--active {
+                    font-weight: 600;
+                }
+            }
         }
 
         @include tablet {
-            
+            // padding-bottom: 0rem;
             // font-size: 1.15rem;
             
         }
@@ -154,18 +167,14 @@ body {
         //TODO
         @include mobile {
             // border: yellow solid;
-            // display: block;
+
             width: 50%;
             height: 100%;
             display: flex;
             justify-content: center;
-            // height: 50px;
-            // text-align: center;
+
         }
 
-        // @include tablet {
-        //     padding-left: 36px;
-        // }
     }
 
     &__link {
@@ -174,14 +183,9 @@ body {
         @include mobile {
             // Text size: 10px | Line height: 20px | Text weight: Bold 700
             text-decoration: none;
-            color: $white;
-            font-size: 14px;
-            // line-height: 20px;
+            color: $silver;
             font-weight: 700;
-            // width: 50%;
-            // padding: 40px;
             width: 100%;
-            border: red solid;
             text-align: center;
         }
 
@@ -192,14 +196,14 @@ body {
         @include desktop {
             font-size: 0.875rem;
         }
-
-
     }
 
     &__link--active {
         @include mobile {
+            color: white;
+            font-weight: 700;
             width: 100%;
-            border-bottom: white 0.125rem solid;
+            border-bottom: white 0.2rem solid;
         }
 
         @include tablet {
@@ -212,51 +216,33 @@ body {
     }
 }
 
-
-
 .hero-background {
 
-    //TODO
     @include mobile {
-                // opacity: 0.9;
-        height: 17rem;
-        opacity: 0.8;
-        
-        // background-color: #323232;
-        // background-image: url('../assets/Images/hero-bio.jpg');
-        background-image:     linear-gradient(
-            rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0.4)
-          ),
-          url('../assets/Images/hero-bio.jpg');
+        height: 11.75rem;
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('../assets/Images/hero-bio.jpg') center/cover;
 
-        background-size: cover;
+        // background-size: cover;
+        // background-position: center;
         display: flex;
-        // background-color: black;
-        // background-blend-mode: darken;
-    
         align-items: center
     }
 
-    //TODO
     @include tablet {
-        height: 28rem;
+        height: 35rem;
     }
 
     @include desktop {
-        height: 38.75rem;
+        height: 45rem;
     }
     
 }
 
 .hero-text {
-    // margin-top: 60px;
  
     @include mobile {
         margin-left: 1rem;
-        // @include heading-text;
-        font-size: 2.5rem;
-        // line-height: 32px;
+        font-size: 1.5rem;
         font-weight: 600;
         color: $white;
     }
@@ -264,7 +250,6 @@ body {
     @include tablet {
         margin-left: 2.25rem;
         font-size: 3.85rem;
-    
     }
 
     @include desktop {
@@ -279,15 +264,11 @@ body {
     @include mobile {
         display: flex;
         flex-direction: column;
-        // padding-left: 16px;
-        // padding-right: 16px;
-        // padding-top: 24px;
     }
 
     &__title {
         @include mobile {
-            // padding-bottom: 16px;
-            font-size: 2.25rem;
+            font-size: 1.5rem;
             font-weight: 600;
             margin-top: 1.5rem;
 
@@ -301,36 +282,28 @@ body {
             font-size: 2.315rem;
             font-weight: 600;
             margin-top: 3rem;
-            // margin-bottom: 2.25rem;
         }
 
         @include desktop {
             padding-left: 8rem;
-            // padding-right: 8rem;
             font-size: 2.25rem;
-            // font-weight: 500;
         }
     }
 }
 
-.section-intro {
-    border: green solid;
-}
+.about {
 
-.about-section {
-
-    border: red solid;
-    //TODO mobile adjustment
     @include mobile {
+        width: 100%;
         display: flex;
         flex-direction: column;
         padding-left: 1rem;
         padding-right: 1rem;
+        margin-top: 1rem;
+        padding-bottom: 1rem;
     }
 
     @include tablet {
-        // display: flex;
-        // flex-direction: column;
         padding-right: 5.85rem;
         padding-left: 5.85rem;
         padding-bottom: 2.25rem;
@@ -341,41 +314,30 @@ body {
         padding-right: 12.5rem;
     }
 
-    // about-section__image-container
-    // &__image-container {
-    //     @include tablet {
-    //         width: 100%;
-    //         height: 20vw;
-    //     }
-
-    // }
-
     &__image {
         @include mobile {
-            width: 100%;
-            margin-top: 1rem;
-            // height: 50vh;        
+            max-width: 100%;
+            // height: auto;
+            object-fit: cover; 
+            aspect-ratio: 16/9;
+            
         }
 
         @include tablet {
-            // max-width: 100%;
-            height: 315px;
-            // object-fit: contain;
-            object-fit: cover;
-            // object-fit: fill;
+            height: 35rem;
             margin-top: 2.25rem;
         }
 
         @include desktop {
-            //TODO
+            height: 40rem;
         }
     }
 
     &__quote {
         @include mobile {
-            line-height: 2;
+            line-height: 1.75;
             font-weight: 600;
-            font-size: 1.25rem;
+            font-size: 0.875rem;
             margin-top: 0.5rem;
         }
 
@@ -413,18 +375,10 @@ body {
 
 }
 
-// .main-title {
-//     padding-bottom: 16px;
-// }
-
 .band {
-    // width: 100vw;
-    width: 100%;
-    // height: 50vw;
-    // padding-bottom: 16px;
 
     @include mobile {
-
+        width: 100%;
     }
 
     @include tablet {
@@ -433,16 +387,13 @@ body {
 
     &__title {
         @include mobile {
-            // padding-top: 24px;
-            // padding-bottom: 24px;
+
             margin-top: 2rem;
-            font-size: 1.25rem;
+            font-size: 0.875rem;
             font-weight: 500;
-            border: red solid;
         }
 
         @include tablet {
-            // padding-top: 24px;
             margin-bottom: 0.5rem;
             margin-top: 1rem;
             font-size: 1.5rem;
@@ -471,17 +422,14 @@ body {
 
     &__description-text {
         @include mobile {
+            font-size: 0.875rem;
             line-height: 1.5;
             margin-top: 1rem;
             font-weight: 500;
-            // padding-bottom: 16px;
         }
 
         @include tablet {
             line-height: 1.55;
-            // margin-top: 1rem;
-            // font-weight: 500;
-            // padding-bottom: 16px;
             font-size: 0.875rem;
         }
 
@@ -490,7 +438,6 @@ body {
             margin-top: 1rem;
             font-weight: 500;
             font-size: 0.875rem;
-            // padding-bottom: 16px;
         }
     }
 }
@@ -498,20 +445,15 @@ body {
 
 // ----------------------------- Photo Galary ----------------------------- //
 .photo-galary {
-    // height: 100px;
-    border: red solid;
 
-    //TODO adjust styling for mobile
     @include mobile {
         background-color: $albaster;
 
-        // padding: 1rem;
-        // @include mobile {
         display: flex;
         flex-direction: column;
         padding-left: 1rem;
         padding-right: 1rem;
-        // padding-bottom: 1rem;
+        padding-bottom: 1rem;
     }
 
     @include tablet {
@@ -528,9 +470,8 @@ body {
     }
 
     &__title {
-        // TODO mobile adjustment
         @include mobile {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 600;
             margin-top: 1.5rem;
             margin-bottom: 1rem;
@@ -544,16 +485,13 @@ body {
         }
 
         @include desktop {
-            // padding-top: 3rem;
-            // padding-bottom: 2.25rem;
+
             font-size: 2.25rem;
-            // font-weight: 600;
         }
     }
 
     &__list {
 
-        border: green solid;
         @include mobile {
            
             display: flex;
@@ -564,7 +502,6 @@ body {
         @include tablet {
             flex-direction: row;
             flex-wrap: wrap;
-            // justify-content: space-between;
             gap: 1.5rem;
             
         }
@@ -577,14 +514,12 @@ body {
     // gap and justify content overlap. Use one or ther other 
     // try not to use both
     &__photo {
-        // border: ;
         @include mobile {
             width: 100%;
         }
 
         @include tablet {
-            // width: 24vw;
-            // flex 1 lets an element grow
+
             width: 28%;
             flex: 1;
         }
@@ -595,28 +530,18 @@ body {
     }
 }
 
-// .band-title {
-//     padding-top: 24px;
-//     padding-bottom: 16px;
-// }
-
 // ------------------------------ Footer ------------------------------
 
 .footer {
 
-
     @include mobile {
         background-color: $bandSite-Black;
-
         color: $white;
         padding: 1rem;
     }
 
     @include tablet {
-        // padding-top: 3rem;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        padding-bottom: 3rem;
+        padding: 3rem 2.25rem 3rem 2.25rem
     }
 
     @include desktop {
@@ -644,30 +569,17 @@ body {
     @include mobile {
         display: flex;
         flex-direction: column;
-        // border: white solid;
         gap: 1rem;
-        // align-items: center;
-        // justify-content: center
     }
 
     @include tablet {
-        // padding-left: 40px;
-        // border: white solid;
-        // display: flex;
         flex-direction: row;
-        // justify-content: flex-start;
-        // align-items: center;
-        margin-top: 3rem;
-        //TODO
-        // gap: 3rem;
         gap: 1.5rem;
         position: relative;
     }
 
     @include desktop {
-        // TODO
         gap: 0rem;
-        margin-top: 1.5rem;
     }
 }
 
@@ -675,8 +587,7 @@ body {
 
     @include mobile {
         font-weight: 600;
-        // border: blue solid;
-        font-size: 3rem;
+        font-size: 1.5rem;
         color: $white;
     }
 
@@ -693,18 +604,16 @@ body {
 
 .flex-container {
     @include mobile {
-
-        // border: red solid;
         color: $white;
         display: flex;
         flex-direction: column;
-        // position: relative;
+        margin-top: 0.5rem;
+        gap: 1rem;
     }
 
     @include tablet {
-        margin-top: 3rem;
+        margin-top: 1.5rem;
         flex-direction: row;
-        // justify-content: space-between;
     }
 
     @include desktop {
@@ -716,32 +625,23 @@ body {
 
     @include mobile {
         display: flex;
-        // gap: 3rem;
-        // border: green solid;
+
         align-items: center;
-        // justify-content: center;
-        // padding-bottom: 2rem;
-        // align-content: space-around;
-        
+
+        gap: 1.5rem;
+
     }
 
     @include tablet {
-        // display: flex;
-        // gap: 2rem;
-        // border: green solid;
-        // padding-bottom: 2rem;
         position: absolute;
-        right: 34%;
+        right: 33%;
         top: 20%;
         gap: 1.25rem;
         width: 33%;;
     }
 
     @include desktop {
-        // gap: 1.75rem;
-        // width: 25%;
-        // position:relative;
-        right: 50%;
+        right: 48.25%;
         gap: 1.25rem;
         width: 25%;
     }
@@ -749,28 +649,16 @@ body {
     &__image {
 
         @include mobile {
-            // border: yellow solid;   
-            height: 2rem;
-            width: 2rem;
-            // display:flex;
-            // align-items: center;
-            // align-self:center;
-            // vertical-align: middle;
-            // margin:auto;
+            height: 1.45rem;
+            width: 1.5rem;
         }
 
         @include tablet {
-            // align-self:center;
-            // height: 1.75rem;
-            // width: 1.5rem;
-            // margin-top: 0.5rem;
             height: 1.6rem;
         }
 
         @include desktop {
             height: 1.65rem;
-            // width: 1.6rem;
-            // width: 25%;
         }
     }
 }
@@ -779,16 +667,13 @@ body {
 .contact {
 
     @include mobile {
-        // padding-bottom: 8px;
-        // margin-bottom: 16px;
-        // border: red solid;
-        font-size: 1rem;
-        margin-bottom: 1rem;
+
+        font-size: 0.875rem;
         
         &__container {
 
             @include mobile {
-                margin-bottom: 1rem;
+                margin-top: 1rem;
             }
         }
     }
@@ -798,9 +683,7 @@ body {
         display: flex;
         flex-direction: column;
         gap: 0.75rem;
-        // border: orange solid;
         width: 33%;
-        // flex: 1;
     }
 
     @include desktop {
@@ -811,7 +694,8 @@ body {
     &__name, &__org {
 
         @include mobile {
-            // TODO
+            font-size: 0.875rem;
+            font-weight: 600;
         }
 
         @include tablet {
@@ -827,7 +711,6 @@ body {
     &__details, &__address {
 
         @include mobile {
-            // TODO
         }
 
         @include tablet {
@@ -835,7 +718,6 @@ body {
         }
 
         @include desktop {
-            // No need
         }
         
     }
@@ -845,16 +727,14 @@ body {
 // bandsite logo image wrapper
 .logo-image_wrapper {
     display: flex;
-    // justify-content: left;
 }
 
 // bandsite logo image
 .logo-image_wrapper--tablet {
     @include tablet {
         position: absolute;
-        // bottom: 12.5rem;
-        // right: 1rem;
-        bottom: 83%;
+
+        bottom: 87%;
         right: 0%;
     }
 
@@ -862,33 +742,26 @@ body {
 
 .footer__logo-image {
     @include mobile {
-        height: 1.25rem;
-        width: 7.5rem;
-        // height: 2rem;
-        margin-bottom: 1.5rem;
-        margin-top: 3rem;
-        // border: green solid;
+        max-height: 1.25rem;
+        max-width: 7rem;
+        margin-top: 4.5rem;
     }
 
-    // TOTO
     @include tablet {
-        // max-height: 20px;
-        // max-width: 120px;
-
-        height: 1.75rem;
-        // margin-bottom: 1.5rem;
+        max-height: 1.75rem;
         margin-top: 3rem;
-        // border: green solid;
     }
 }
 
 .copyright {
 
     @include mobile {
-        margin-top: 2rem;
+        font-size: 0.7rem;
+        margin-top: 1rem;
     }
 
     @include tablet {
+        margin-top: 3rem;
         font-size: 0.875rem;
     }
     
