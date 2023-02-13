@@ -1,3 +1,7 @@
+//workshop notes:
+// write in first person and avoid wordy
+
+
 @use './partials/mixins' as *;
 @use './partials/variables' as *;
 @use './partials/fonts' as *;
@@ -626,9 +630,7 @@ img {
 
     @include mobile {
         display: flex;
-
         align-items: center;
-
         gap: 1.5rem;
 
     }
@@ -638,7 +640,7 @@ img {
         right: 33%;
         top: 20%;
         gap: 1.25rem;
-        width: 33%;;
+        width: 33%;
     }
 
     @include desktop {
