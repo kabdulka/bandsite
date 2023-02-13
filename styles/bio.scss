@@ -221,7 +221,7 @@ img {
     @include mobile {
         height: 11.75rem;
         background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('../assets/Images/hero-bio.jpg') center/cover;
-
+        height: 20rem;
         // background-size: cover;
         // background-position: center;
         display: flex;
@@ -368,11 +368,7 @@ img {
                 margin-top: 0.5rem;
             }
         }
-
-
     }
-
-
 }
 
 .band {
@@ -516,6 +512,11 @@ img {
     &__photo {
         @include mobile {
             width: 100%;
+            filter: grayscale(0.9);
+            &:hover {
+                filter: grayscale(0);
+                transition: filter 0.5s;
+            }
         }
 
         @include tablet {
