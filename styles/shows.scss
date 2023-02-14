@@ -221,7 +221,8 @@ img {
 
 .shows {
 
-    padding: 1rem;
+    padding-top: 1rem;;
+    padding-bottom: 1rem;
 
     @include tablet {
         //TODO
@@ -235,9 +236,12 @@ img {
         font-weight: 600;
         margin-top: 1rem;
         margin-bottom: 1.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
 
         @include tablet {
             //TODO
+            // border: green solid;
         }
     
         @include desktop {
@@ -247,7 +251,7 @@ img {
 
     &__list {
         list-style: none;
-
+        // border: green solid;
         @include tablet {
             //TODO
         }
@@ -258,17 +262,28 @@ img {
     }
 
     &__item {
+        border: red solid;
         // background-color: rgb(235, 225, 225);
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid;
+        // padding-bottom: 1rem;
+        padding: 0rem 1rem 1rem 1rem;
+        border-bottom: 1px $mercury solid;
         margin-top: 1rem;
+        
         
 
         @include tablet {
             flex-direction: row;
+            // justify-content: space-between;
+            // gap: 2rem;
+            // padding: 0rem 1rem 2rem 2rem;
+            padding-right: 2rem;
+            padding-left: 2rem;
+            // align-items: center;
+            margin: auto;
+            gap: 0.25rem;
         }
 
         @include desktop {
@@ -277,13 +292,17 @@ img {
     }
 
     &__date {
-        // border: red solid;
+        border: blue solid;
+
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
 
         @include tablet {
             //TODO
+            // margin: auto;
+            width: 25%;
+
         }
 
         @include desktop {
@@ -297,9 +316,10 @@ img {
         font-weight: 600;
         color: $silver;
         // color: #E1E1E1;
-
+        // display: "none";
         @include tablet {
             //TODO
+            display: none;
         }
 
         @include desktop {
@@ -321,13 +341,14 @@ img {
     }
 
     &__venue {
-
+        border: blue solid;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
 
         @include tablet {
             //TODO
+            width: 25%;
         }
 
         @include desktop {
@@ -342,6 +363,7 @@ img {
 
         @include tablet {
             //TODO
+            display: none;
         }
 
         @include desktop {
@@ -364,12 +386,15 @@ img {
 
     &__location {
 
+        border: blue solid;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+        
 
         @include tablet {
             //TODO
+            width: 25%;
         }
 
         @include desktop {
@@ -385,6 +410,7 @@ img {
 
         @include tablet {
             //TODO
+            display: none;
         }
 
         @include desktop {
@@ -412,12 +438,14 @@ img {
         background-color:$bandSite-Black;
         padding: 0.5rem 2rem;
         border-radius: 4px;
+        
         height: 2.5rem;
         // margin:auto;
         display: flex;
 
         @include tablet {
             //TODO
+            // width: 25%;
         }
 
         @include desktop {
@@ -431,14 +459,273 @@ img {
     // height: 100%;
     // border: red solid;
     color: $white;
-    font-size: 0.875rem;
-    font-weight: 700;
+    font-size: 1.025rem;
+    font-weight: 600;
     margin:auto;
     // vertical-align: auto;
     // line-height: 20px;
     // margin: auto;
     // justify-content: center;
     // align-content: center;
+}
+
+
+
+// -------------------------------------------------- Footer ------------------------------------------------------------
+
+footer {
+
+    @include mobile {
+        background-color: $bandSite-Black;
+        color: $white;
+        padding: 1rem;
+    }
+
+    @include tablet {
+        padding: 3rem 2.25rem 3rem 2.25rem
+    }
+
+    @include desktop {
+        padding-left: 8rem;
+        padding-right: 8rem;
+    }
+} // end footer
+
+.footer-wrapper {
+    @include mobile {
+
+    }
+
+    @include tablet {
+        position: relative;
+    }
+
+    @include desktop {
+        
+    }
+}
+
+.footer-intro {
+    // border: blue solid;
+    @include mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    @include tablet {
+        flex-direction: row;
+        // gap: 8.5rem;
+        // gap: 10%;
+        gap: 1rem;
+        position: relative;
+    }
+
+    @include desktop {
+        gap: 1rem;
+    }
+}
+
+.footer-title {
+    // border: green solid;
+    @include mobile {
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: $white;
+        margin-top: 0.5rem;
+    }
+
+    @include tablet {
+        font-size: 2.2rem;
+        width: 33%;
+    }
+
+    @include desktop {
+        font-size: 2.3rem;
+        width: 25%;
+    }
+
+}
+
+.flex-container {
+    // border: white solid;
+    @include mobile {
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        margin-top: 0.5rem;
+        gap: 1rem;
+    }
+
+    @include tablet {
+        margin-top: 1.5rem;
+        flex-direction: row;
+        // gap: 2rem;
+    }
+
+    @include desktop {
+
+    }
+}
+
+.filler {
+    @include mobile {
+
+    }
+
+    @include tablet {
+        // height: 100%;
+        width: 67%;
+        // border: red solid;
+    }
+
+    @include desktop {
+        width: 50%;
+    }
+}
+
+.icon-container {
+    // border: green solid;
+    @include mobile {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+
+    }
+
+    @include tablet {
+        position: absolute;
+        right: 33%;
+        top: 20%;
+        gap: 1.25rem;
+        width: 33%;
+    }
+
+    @include desktop {
+        right: 48.5%;
+        // gap: 1.25rem;
+        width: 25%;
+    }
+
+    &__image {
+
+        @include mobile {
+            height: 1.45rem;
+            width: 1.5rem;
+        }
+
+        @include tablet {
+            height: 1.6rem;
+        }
+
+        @include desktop {
+            height: 1.65rem;
+        }
+    }
+}
+
+
+.contact {
+    // border: red solid;
+    @include mobile {
+
+        font-size: 0.875rem;
+        
+        &__container {
+            // border: blue;
+            @include mobile {
+                margin-top: 1rem;
+            }
+        }
+    }
+
+    @include tablet {
+        font-size: 0.875rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 33%;
+    }
+
+    @include desktop {
+        gap: 0.75rem;
+        width: 25%;
+    }
+
+    &__name, &__org {
+
+        @include mobile {
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        @include tablet {
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        @include desktop {
+           // No need 
+        }
+    }
+
+    &__details, &__address {
+
+        @include mobile {
+        }
+
+        @include tablet {
+            font-size: 0.875rem;
+        }
+
+        @include desktop {
+        }
+        
+    }
+  
+}
+
+// bandsite logo image wrapper
+.logo-image_wrapper {
+    display: flex;
+}
+
+// bandsite logo image
+.logo-image_wrapper--tablet {
+    @include tablet {
+        position: absolute;
+
+        bottom: 87%;
+        right: 0%;
+    }
+
+}
+
+.footer__logo-image {
+    @include mobile {
+        max-height: 1.25rem;
+        max-width: 7rem;
+        margin-top: 4.5rem;
+    }
+
+    @include tablet {
+        max-height: 1.75rem;
+        margin-top: 3rem;
+    }
+}
+
+.copyright {
+
+    @include mobile {
+        font-size: 0.7rem;
+        margin-top: 1rem;
+    }
+
+    @include tablet {
+        margin-top: 3rem;
+        font-size: 0.875rem;
+    }
+    
 }
 
 

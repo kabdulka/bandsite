@@ -47,7 +47,70 @@ const showsList = document.querySelector(".shows__list");
 // TODO Make this into a function called display...
 shows.forEach(show => {
 
-    createShowItem(showsList, show.date, show.venue, show.location);
+    // createShowItem(showsList, show.date, show.venue, show.location);
+
+    // create an li element
+    const listItem = document.createElement("li");
+    // give it a class name of shows__item
+    listItem.classList.add("shows__item");
+    showsList.appendChild(listItem);
+
+    const dateItem = document.createElement("div");
+    dateItem.classList.add("shows__date");
+    listItem.appendChild(dateItem);
+    // createDateContent(dateItem, dateValue);
+    const dateTitle = document.createElement("p");
+   
+    dateTitle.classList.add("shows__date-title");
+    dateTitle.innerText = "DATE";
+    const date = document.createElement("p");
+    
+    date.classList.add("shows__date-value");
+    date.innerText = show.date;
+    dateItem.appendChild(dateTitle);
+    dateItem.appendChild(date);
+
+    const venueItem = document.createElement("div");
+    venueItem.classList.add("shows__venue");
+    listItem.appendChild(venueItem);
+    // createVenueContent(venueItem, venueValue);
+
+    const venueTitle = document.createElement("p");
+    venueTitle.classList.add("shows__venue-title");
+    venueTitle.innerText = "VENUE";
+    
+    const venue = document.createElement("p");
+    venue.classList.add("shows__venue-value");
+    venue.innerText = show.venue;
+
+    venueItem.appendChild(venueTitle);
+    venueItem.appendChild(venue);
+
+    const locationItem = document.createElement("div");
+    locationItem.classList.add("shows__location");
+    listItem.appendChild(locationItem);
+    // createLocationContent(locationItem, locationValue);
+
+    const locationTitle = document.createElement("p");
+    locationTitle.classList.add("shows__location-title");
+    locationTitle.innerText = "LOCATION";
+    
+    const location = document.createElement("p");
+    location.classList.add("shows__location-value");
+    location.innerText = show.location;
+
+    locationItem.appendChild(locationTitle);
+    locationItem.appendChild(location);
+
+    const btnContainer = document.createElement("div");
+    btnContainer.classList.add("shows__btn");
+    listItem.appendChild(btnContainer);
+
+    const btn = document.createElement("a");
+    btn.classList.add("btn");
+    btn.innerText = "BUY TICKET";
+    btnContainer.appendChild(btn);
+
 
 });
 
@@ -73,15 +136,15 @@ function createDateContainer (parentElement, dateValue) {
 }
 
 function createDateContent (parentElement, dateValue) {
-    const title = document.createElement("p");
+    const dateTitle = document.createElement("p");
    
-    title.classList.add("shows__date-title");
-    title.innerText = "DATE";
+    dateTitle.classList.add("shows__date-dateTitle");
+    dateTitle.innerText = "DATE";
     const date = document.createElement("p");
     
     date.classList.add("shows__date-value");
     date.innerText = dateValue;
-    parentElement.appendChild(title);
+    parentElement.appendChild(dateTitle);
     parentElement.appendChild(date);
 
 }//end create date function
@@ -94,15 +157,15 @@ function createVenueContainer (parentElement, venueValue) {
 }
 
 function createVenueContent (parentElement, venueValue) {
-    const title = document.createElement("p");
-    title.classList.add("shows__venue-title");
-    title.innerText = "VENUE";
+    const dateTitle = document.createElement("p");
+    dateTitle.classList.add("shows__venue-dateTitle");
+    dateTitle.innerText = "VENUE";
     
     const venue = document.createElement("p");
     venue.classList.add("shows__venue-value");
     venue.innerText = venueValue;
 
-    parentElement.appendChild(title);
+    parentElement.appendChild(dateTitle);
     parentElement.appendChild(venue);
 }
 
@@ -114,15 +177,15 @@ function createLocationContainer (parentElement, locationValue) {
 }
 
 function createLocationContent (parentElement, locationValue) {
-    const title = document.createElement("p");
-    title.classList.add("shows__location-title");
-    title.innerText = "LOCATION";
+    const dateTitle = document.createElement("p");
+    dateTitle.classList.add("shows__location-dateTitle");
+    dateTitle.innerText = "LOCATION";
     
     const location = document.createElement("p");
     location.classList.add("shows__location-value");
     location.innerText = locationValue;
 
-    parentElement.appendChild(title);
+    parentElement.appendChild(dateTitle);
     parentElement.appendChild(location);
 }
 
@@ -138,25 +201,42 @@ function createButton (parentElement) {
 }
 
 
+// let tabletBreakpoint = window.matchMedia("(max-width: 700px)");
+// console.log(tabletBreakpoint);
+// if 
 
+// console.log(window.innerWidth);
 
+// if (window.innerWidth <= 768) {
+//     console.log("true");
+//     const dateItems = document.querySelectorAll(".shows__date-dateTitle");
+//     console.log(dateItems);
+//     dateItems.forEach (item => {
+//         item.style.display = "none";
+//     });
+    
+    // const 
+// }
+
+// const dateItem = document.querySelectorAll(".shows__date-dateTitle");
+// dateItem[0].style.display = "none";
 
 
 
 
 
 {/* <div class="shows__date">
-<p class="shows__date-title"> DATE </p>
+<p class="shows__date-dateTitle"> DATE </p>
 <p class="shows__date-value"> Mon Sept 06 2021 </p>
 </div>
 
 <div class="shows__venue">
-<p class="shows__venue-title"> VENUE </p>
+<p class="shows__venue-dateTitle"> VENUE </p>
 <p class="shows__venue-value"> Ronald Lane </p>
 </div>
 
 <div class="shows__location">
-<p class="shows__location-title"> LOCATION </p>
+<p class="shows__location-dateTitle"> LOCATION </p>
 <p class="shows__location-value"> San Francisco, CA </p>
 </div>
 <div class="shows__btn">
