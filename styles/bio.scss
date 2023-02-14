@@ -86,8 +86,6 @@ img {
                     // height: 1.15rem;
                 }
             }
-
-            
         }
 
         @include tablet {
@@ -570,7 +568,7 @@ img {
 }
 
 .footer-intro {
-
+    border: blue solid;
     @include mobile {
         display: flex;
         flex-direction: column;
@@ -579,17 +577,19 @@ img {
 
     @include tablet {
         flex-direction: row;
-        gap: 1.5rem;
+        // gap: 8.5rem;
+        // gap: 10%;
+        gap: 1rem;
         position: relative;
     }
 
     @include desktop {
-        gap: 0rem;
+        gap: 1rem;
     }
 }
 
 .footer-title {
-
+    border: green solid;
     @include mobile {
         font-weight: 600;
         font-size: 1.5rem;
@@ -598,6 +598,7 @@ img {
 
     @include tablet {
         font-size: 2.2rem;
+        width: 33%;
     }
 
     @include desktop {
@@ -608,6 +609,7 @@ img {
 }
 
 .flex-container {
+    border: white solid;
     @include mobile {
         color: $white;
         display: flex;
@@ -619,6 +621,7 @@ img {
     @include tablet {
         margin-top: 1.5rem;
         flex-direction: row;
+        // gap: 2rem;
     }
 
     @include desktop {
@@ -626,8 +629,24 @@ img {
     }
 }
 
-.icon-container {
+.filler {
+    @include mobile {
 
+    }
+
+    @include tablet {
+        // height: 100%;
+        width: 67%;
+        border: red solid;
+    }
+
+    @include desktop {
+        width: 50%;
+    }
+}
+
+.icon-container {
+    border: green solid;
     @include mobile {
         display: flex;
         align-items: center;
@@ -644,8 +663,8 @@ img {
     }
 
     @include desktop {
-        right: 48.25%;
-        gap: 1.25rem;
+        right: 48.5%;
+        // gap: 1.25rem;
         width: 25%;
     }
 
@@ -668,13 +687,13 @@ img {
 
 
 .contact {
-
+    border: red solid;
     @include mobile {
 
         font-size: 0.875rem;
         
         &__container {
-
+            // border: blue;
             @include mobile {
                 margin-top: 1rem;
             }

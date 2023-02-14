@@ -495,6 +495,9 @@ img {
     position: relative;
   }
 }
+.footer-intro {
+  border: blue solid;
+}
 @media (min-width: 320px) {
   .footer-intro {
     display: flex;
@@ -505,16 +508,19 @@ img {
 @media (min-width: 768px) {
   .footer-intro {
     flex-direction: row;
-    gap: 1.5rem;
+    gap: 1rem;
     position: relative;
   }
 }
 @media (min-width: 1280px) {
   .footer-intro {
-    gap: 0rem;
+    gap: 1rem;
   }
 }
 
+.footer-title {
+  border: green solid;
+}
 @media (min-width: 320px) {
   .footer-title {
     font-weight: 600;
@@ -525,6 +531,7 @@ img {
 @media (min-width: 768px) {
   .footer-title {
     font-size: 2.2rem;
+    width: 33%;
   }
 }
 @media (min-width: 1280px) {
@@ -534,6 +541,9 @@ img {
   }
 }
 
+.flex-container {
+  border: white solid;
+}
 @media (min-width: 320px) {
   .flex-container {
     color: #ffffff;
@@ -548,6 +558,21 @@ img {
     margin-top: 1.5rem;
     flex-direction: row;
   }
+}
+@media (min-width: 768px) {
+  .filler {
+    width: 67%;
+    border: red solid;
+  }
+}
+@media (min-width: 1280px) {
+  .filler {
+    width: 50%;
+  }
+}
+
+.icon-container {
+  border: green solid;
 }
 @media (min-width: 320px) {
   .icon-container {
@@ -567,8 +592,7 @@ img {
 }
 @media (min-width: 1280px) {
   .icon-container {
-    right: 48.25%;
-    gap: 1.25rem;
+    right: 48.5%;
     width: 25%;
   }
 }
@@ -589,6 +613,9 @@ img {
   }
 }
 
+.contact {
+  border: red solid;
+}
 @media (min-width: 320px) {
   .contact {
     font-size: 0.875rem;

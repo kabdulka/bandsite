@@ -9,19 +9,19 @@
 
 // };
 
-// Both are the same if you want to access an object's value using its key
-// method 1
+// // Both are the same if you want to access an object's value using its key
+// // method 1
 // obj.firstName = "Kenan";
 
-// method 2
+// // method 2
 // console.log(obj["firstName"]);
 
 
-let comments = [];
+// let comments = [];
 
-function displayComment(element) {
+// function displayComment(element) {
 
-}
+// }
 
 
 
@@ -36,3 +36,4 @@ function displayComment(element) {
 // Clears all comments from the page
 // Re-renders to the page all comments from the comment array
 // Clears the input fields after submitting a new commen
+
