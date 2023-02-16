@@ -29,11 +29,11 @@ body * {
 
 
 
-img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-}
+// img {
+//     width: 100%;
+//     max-width: 100%;
+//     height: auto;
+// }
 
 // ----------------------------- header/nav ----------------------------- //
 
@@ -533,7 +533,98 @@ img {
     }
 }
 
-// ------------------------------ Footer ------------------------------
+
+// ------------------------------------------------------------ Comments ------------------------------------------------------------
+
+.comment {
+    // display: flex;
+    // flex-direction: column;
+
+    padding: 1rem;
+
+    @include tablet {
+        padding: 0rem 6rem;
+    }
+
+    &__item {
+        display: flex;
+        // flex-direction: column;
+        // border: red solid;
+        border-top: $mercury 1px solid;
+        gap: 1rem;
+        // padding: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    &__value {
+        width: 30%;
+    }
+
+    &__image {
+        border: yellow solid;
+        background-color: $mercury;
+        min-height: 40px;
+        min-width: 40px;
+        // max-height: 100px;
+        // max-width: 100px;
+        border-radius: 50%;
+    }
+
+    &__image-container {
+        // border: blue solid;
+        // flex: 1;
+        // width: 10%;
+        // background-color: $silver;
+        // min-height: 50px;
+        // min-width: 50px;
+        // // max-height: 100px;
+        // // max-width: 100px;
+        // border-radius: 50%;
+    }
+
+    &__info {
+        // border: green solid;
+        flex: 1;
+        // width: 90%;
+        // padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        &__row-1 {
+            // border: blue solid;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__value {
+        // border: blue solid;
+        width: 100%;
+        font-size: 0.825rem;
+        line-height: 1.5;
+    }
+
+    &__name {
+        // border: red solid;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    &__date {
+        font-size: 0.78rem;
+        color: $silver;
+    }
+
+    
+
+
+}
+
+
+
+// ------------------------------------------------------------ Footer ------------------------------------------------------------
 
 .footer {
 

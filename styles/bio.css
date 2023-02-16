@@ -39,12 +39,6 @@ a {
   text-decoration: none;
 }
 
-img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-}
-
 @media (min-width: 320px) {
   .header {
     height: 5rem;
@@ -471,6 +465,55 @@ img {
     flex: 1;
   }
 }
+.comment {
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .comment {
+    padding: 0rem 6rem;
+  }
+}
+.comment__item {
+  display: flex;
+  border-top: #E1E1E1 1px solid;
+  gap: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.comment__value {
+  width: 30%;
+}
+.comment__image {
+  border: yellow solid;
+  background-color: #E1E1E1;
+  min-height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+}
+.comment__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.comment__info__row-1 {
+  display: flex;
+  justify-content: space-between;
+}
+.comment__value {
+  width: 100%;
+  font-size: 0.825rem;
+  line-height: 1.5;
+}
+.comment__name {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.comment__date {
+  font-size: 0.78rem;
+  color: #AFAFAF;
+}
+
 @media (min-width: 320px) {
   .footer {
     background-color: #323232;

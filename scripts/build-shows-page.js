@@ -57,46 +57,46 @@ shows.forEach(show => {
     showsInfoDiv.classList.add("shows__info");
     listItem.appendChild(showsInfoDiv);
 
-        const dateItem = document.createElement("div");
-        dateItem.classList.add("shows__date");
-        showsInfoDiv.appendChild(dateItem);
-        const dateTitle = document.createElement("p");
+    const dateItem = document.createElement("div");
+    dateItem.classList.add("shows__date");
+    showsInfoDiv.appendChild(dateItem);
+    const dateTitle = document.createElement("p");
     
-        dateTitle.classList.add("shows__date-title");
-        dateTitle.innerText = "DATE";
-        const date = document.createElement("p");
+    dateTitle.classList.add("shows__date-title");
+    dateTitle.innerText = "DATE";
+    const date = document.createElement("p");
         
-        date.classList.add("shows__date-value");
-        date.innerText = show.date;
-        dateItem.appendChild(dateTitle);
-        dateItem.appendChild(date);
+    date.classList.add("shows__date-value");
+    date.innerText = show.date;
+    dateItem.appendChild(dateTitle);
+    dateItem.appendChild(date);
 
-        const venueItem = document.createElement("div");
-        venueItem.classList.add("shows__venue");
-        showsInfoDiv.appendChild(venueItem);
+    const venueItem = document.createElement("div");
+    venueItem.classList.add("shows__venue");
+    showsInfoDiv.appendChild(venueItem);
 
-        const venueTitle = document.createElement("p");
-        venueTitle.classList.add("shows__venue-title");
-        venueTitle.innerText = "VENUE";
+    const venueTitle = document.createElement("p");
+    venueTitle.classList.add("shows__venue-title");
+    venueTitle.innerText = "VENUE";
         
-        const venue = document.createElement("p");
-        venue.classList.add("shows__venue-value");
-        venue.innerText = show.venue;
+    const venue = document.createElement("p");
+    venue.classList.add("shows__venue-value");
+    venue.innerText = show.venue;
 
-        venueItem.appendChild(venueTitle);
-        venueItem.appendChild(venue);
+    venueItem.appendChild(venueTitle);
+    venueItem.appendChild(venue);
 
-        const locationItem = document.createElement("div");
-        locationItem.classList.add("shows__location");
-        showsInfoDiv.appendChild(locationItem);
+    const locationItem = document.createElement("div");
+    locationItem.classList.add("shows__location");
+    showsInfoDiv.appendChild(locationItem);
 
-        const locationTitle = document.createElement("p");
-        locationTitle.classList.add("shows__location-title");
-        locationTitle.innerText = "LOCATION";
+    const locationTitle = document.createElement("p");
+    locationTitle.classList.add("shows__location-title");
+    locationTitle.innerText = "LOCATION";
         
-        const location = document.createElement("p");
-        location.classList.add("shows__location-value");
-        location.innerText = show.location;
+    const location = document.createElement("p");
+    location.classList.add("shows__location-value");
+    location.innerText = show.location;
 
     locationItem.appendChild(locationTitle);
     locationItem.appendChild(location);
@@ -220,3 +220,25 @@ shows.forEach(show => {
 // const dateItem = document.querySelectorAll(".shows__date-dateTitle");
 // dateItem[0].style.display = "none";
 
+function replaceUpper (sentence) {
+    let temp = "";
+    words = sentence.split(" ");
+    console.log(words);
+    
+    for (let i = 0; i<words.length; i++) {
+        temp = words[i];
+        // firstChar = temp.charAt(0) + "";
+        // console.log(temp.charAt(0));
+        temp = temp.charAt(0).toUpperCase() + "" + temp.substring(1, temp.length);
+        // console.log(words[i].charAt(0));
+        words[i] = temp;
+
+    }
+
+    let result = words.join(" ");
+    console.log(result);
+    return result;
+}
+
+let ans = replaceUpper("brainstation is fun");
+console.log(ans);
