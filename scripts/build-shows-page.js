@@ -111,94 +111,52 @@ shows.forEach(show => {
     btnContainer.appendChild(btn);
 
 
+    
+
+    //hover events
+
+    // const showItems = document.querySelectorAll(".shows__item");
+    // console.log(showItems)
+    // showItems.forEach (item => {
+    //     item.addEventListener("mouseenter", (event) => {
+    //         event.stopPropagation()
+    //         console.log("hover");
+    //         item.style.color = "red";
+    //     })
+    
+    //     // item.addEventListener("")
+    // }) 
+    
+
 });
 
-// function createShowItem (parentElement, dateValue, venueValue, locationValue) {
-//     // create an li element
-//     const listItem = document.createElement("li");
-//     // give it a class name of shows__item
-//     listItem.classList.add("shows__item");
-//     //make it a chile of showList (ul)
-//     parentElement.appendChild(listItem);
-//     createDateContainer(listItem, dateValue);
-//     createVenueContainer(listItem, venueValue);
-//     createLocationContainer(listItem, locationValue);
-//     createButton(listItem);
-// }
 
-// create div container with a class of shows__date
-// function createDateContainer (parentElement, dateValue) {
-//     const dateItem = document.createElement("div");
-//     dateItem.classList.add("shows__date");
-//     parentElement.appendChild(dateItem);
-//     createDateContent(dateItem, dateValue);
-// }
+// const title = document.querySelector(".shows__title");
+// title.addEventListener("mouseover", (e) => {
+//     console.log(e)
+// })
 
-// function createDateContent (parentElement, dateValue) {
-//     const dateTitle = document.createElement("p");
-   
-//     dateTitle.classList.add("shows__date-dateTitle");
-//     dateTitle.innerText = "DATE";
-//     const date = document.createElement("p");
-    
-//     date.classList.add("shows__date-value");
-//     date.innerText = dateValue;
-//     parentElement.appendChild(dateTitle);
-//     parentElement.appendChild(date);
 
-// }//end create date function
+const showItems = document.querySelectorAll(".shows__item");
+console.log(showItems)
+showItems.forEach (item => {
+    item.addEventListener("mouseover", (event) => {
+        event.stopPropagation()
+        console.log("hover");
+        item.classList.toggle("shows__item--hover");
+        // item.style.color = "red";
+    })
 
-// function createVenueContainer (parentElement, venueValue) {
-//     const venueItem = document.createElement("div");
-//     venueItem.classList.add("shows__venue");
-//     parentElement.appendChild(venueItem);
-//     createVenueContent(venueItem, venueValue);
-// }
+    // item.addEventListener("")
+}) 
 
-// function createVenueContent (parentElement, venueValue) {
-//     const dateTitle = document.createElement("p");
-//     dateTitle.classList.add("shows__venue-dateTitle");
-//     dateTitle.innerText = "VENUE";
-    
-//     const venue = document.createElement("p");
-//     venue.classList.add("shows__venue-value");
-//     venue.innerText = venueValue;
-
-//     parentElement.appendChild(dateTitle);
-//     parentElement.appendChild(venue);
-// }
-
-// function createLocationContainer (parentElement, locationValue) {
-//     const locationItem = document.createElement("div");
-//     locationItem.classList.add("shows__location");
-//     parentElement.appendChild(locationItem);
-//     createLocationContent(locationItem, locationValue);
-// }
-
-// function createLocationContent (parentElement, locationValue) {
-//     const dateTitle = document.createElement("p");
-//     dateTitle.classList.add("shows__location-dateTitle");
-//     dateTitle.innerText = "LOCATION";
-    
-//     const location = document.createElement("p");
-//     location.classList.add("shows__location-value");
-//     location.innerText = locationValue;
-
-//     parentElement.appendChild(dateTitle);
-//     parentElement.appendChild(location);
-// }
-
-// function createButton (parentElement) {
-//     const btnContainer = document.createElement("div");
-//     btnContainer.classList.add("shows__btn");
-//     parentElement.appendChild(btnContainer);
-
-//     const btn = document.createElement("a");
-//     btn.classList.add("btn");
-//     btn.innerText = "BUY TICKET";
-//     btnContainer.appendChild(btn);
-// }
-
+showItems.forEach( item => {
+    item.addEventListener("mouseout", () => {
+        console.log("mouse out ")
+        // item.style.color = "black"; 
+        item.classList.toggle("shows__item--hover");
+    })
+} )
 
 // let tabletBreakpoint = window.matchMedia("(max-width: 700px)");
 // console.log(tabletBreakpoint);
@@ -220,25 +178,29 @@ shows.forEach(show => {
 // const dateItem = document.querySelectorAll(".shows__date-dateTitle");
 // dateItem[0].style.display = "none";
 
-function replaceUpper (sentence) {
-    let temp = "";
-    words = sentence.split(" ");
-    console.log(words);
+// function replaceUpper (sentence) {
+//     let temp = "";
+//     words = sentence.split(" ");
+//     console.log(words);
     
-    for (let i = 0; i<words.length; i++) {
-        temp = words[i];
-        // firstChar = temp.charAt(0) + "";
-        // console.log(temp.charAt(0));
-        temp = temp.charAt(0).toUpperCase() + "" + temp.substring(1, temp.length);
-        // console.log(words[i].charAt(0));
-        words[i] = temp;
+//     for (let i = 0; i<words.length; i++) {
+//         temp = words[i];
 
-    }
+//         // firstChar = temp.charAt(0) + "";
+//         // console.log(temp.charAt(0));
+//         temp = temp.charAt(0).toUpperCase() + "" + temp.substring(1, temp.length);
+//         // console.log(words[i].charAt(0));
+//         words[i] = temp;
 
-    let result = words.join(" ");
-    console.log(result);
-    return result;
-}
+//     }
 
-let ans = replaceUpper("brainstation is fun");
-console.log(ans);
+//     let result = words.join(" ");
+//     console.log(result);
+//     return result;
+// }
+
+// let ans = replaceUpper("brainstation is fun");
+// console.log(ans);
+
+
+

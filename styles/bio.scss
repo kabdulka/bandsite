@@ -536,6 +536,78 @@ body * {
 
 // ------------------------------------------------------------ Comments ------------------------------------------------------------
 
+.form {
+    padding: 1rem;
+    border: red solid;
+
+    &__container {
+        border: blue solid;
+        display: flex;
+        gap: 0.75rem;
+    }
+
+    &__comment {
+        display: flex;
+        flex-direction: column;
+        border: green solid;
+        flex: 1;
+        gap: 0.5rem;
+    }
+
+    &__comment-btn {
+        // border: red solid;
+        background-color: $bandSite-Black;
+        border: none;
+        color: $white;
+        padding: 0.5rem 2rem;
+        height: 2.5rem;
+        border-radius: 4px;
+        font-size: 0.875rem;
+    } 
+}
+
+// .form {
+
+//     padding: 1rem;
+//     border: red solid;
+
+//     &__comment {
+
+//         display: flex;
+//         gap: 1rem;
+
+//         @include tablet {
+
+//         }
+
+//         @include desktop {
+
+//         }
+//         // comment__image-container
+//         &__image-container {
+
+//         }
+
+//         &__field-set {
+//             flex: 1;
+//             display: flex;
+//         }
+
+//         &__container {
+//             border: blue solid;
+//             display: flex;
+//             flex-direction: column;
+//             width: 100%;
+//         }
+
+//         &__comment-text {
+//             // border-style: none;
+//             width: 100%;
+//         }
+//     }
+// }
+
+
 .comment {
     // display: flex;
     // flex-direction: column;
@@ -617,7 +689,6 @@ body * {
         color: $silver;
     }
 
-    
 
 
 }

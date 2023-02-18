@@ -309,9 +309,10 @@ img {
         flex-direction: column;
         gap: 1rem;
         // padding-bottom: 1rem;
-        padding: 0rem 1rem 1rem 1rem;
+        // padding: 1rem 1rem 1rem 1rem;
+        padding: 0.5rem;
         border-bottom: 1px $mercury solid;
-        margin-top: 1rem;
+        // margin-top: 1rem;
         
         
 
@@ -330,10 +331,14 @@ img {
         @include desktop {
             //TODO
         }
+
+        &--hover {
+            background-color: $silver;
+        }
     }
 
     &__date {
-        border: blue solid;
+        // border: blue solid;
 
         display: flex;
         flex-direction: column;
@@ -388,7 +393,7 @@ img {
     }
 
     &__venue {
-        border: blue solid;
+        // border: blue solid;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
@@ -439,7 +444,7 @@ img {
 
     &__location {
 
-        border: blue solid;
+        // border: blue solid;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;

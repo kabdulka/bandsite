@@ -465,6 +465,32 @@ a {
     flex: 1;
   }
 }
+.form {
+  padding: 1rem;
+  border: red solid;
+}
+.form__container {
+  border: blue solid;
+  display: flex;
+  gap: 0.75rem;
+}
+.form__comment {
+  display: flex;
+  flex-direction: column;
+  border: green solid;
+  flex: 1;
+  gap: 0.5rem;
+}
+.form__comment-btn {
+  background-color: #323232;
+  border: none;
+  color: #ffffff;
+  padding: 0.5rem 2rem;
+  height: 2.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
 .comment {
   padding: 1rem;
 }
