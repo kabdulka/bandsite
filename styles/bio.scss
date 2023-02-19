@@ -537,96 +537,198 @@ body * {
 // ------------------------------------------------------------ Comments ------------------------------------------------------------
 
 .form {
-    padding: 1rem;
-    border: red solid;
+    // padding: 1rem;
+    padding: 0rem 1rem 0rem 1rem;
+
+    @include tablet {
+        margin-top: 2rem;
+    }
+
+    &__title {
+        font-size: 1.55rem;
+        font-weight: 600;
+
+        @include tablet {
+            font-size: 2.32rem;
+            padding: 0rem 1rem;
+        }
+    }
 
     &__container {
-        border: blue solid;
+        // border: blue solid;
+        // display: flex;
+        // gap: 0.75rem;
+        // border-bottom: $mercury 1px solid;
+
+        // margin-top: 1.5rem;
+
+        @include tablet {
+            margin-top: 2.5rem;
+            padding: 0rem 5rem;
+            // border-bottom: $mercury 1px solid;
+
+        }
+    }
+
+    &__wrapper {
         display: flex;
         gap: 0.75rem;
+        border-bottom: $mercury 1px solid;
+        padding-bottom: 1rem;
+
+        @include tablet {
+            padding-bottom: 2rem;
+        }
+
     }
 
     &__comment {
         display: flex;
         flex-direction: column;
-        border: green solid;
+        // border: green solid;
         flex: 1;
-        gap: 0.5rem;
+        gap: 1rem;
+
+        @include tablet {
+            // position: relative;
+
+        }
+
+        @include desktop {
+
+        }
+
+
+        &__btn-container {
+            // border: red solid;
+            display: flex;
+            // method 1 to make an element move to the far right/left of its flex container
+            justify-content: flex-end;
+            // flex-direction: row-reverse;
+        }
+
+        &-btn {
+            // border: red solid;
+            background-color: $bandSite-Black;
+            border: none;
+            color: $white;
+            padding: 0.5rem 2rem;
+            height: 2.5rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            width: 100%;
+    
+            @include tablet {
+
+                width: 9.75rem;
+                // method 2
+                // margin-left: auto;
+                // position: absolute;
+                // method 3
+                // right: 0rem;
+                // bottom: 0rem;
+  
+            }
+        }
+
+        
+        &-name {
+            // color: $silver;
+            // font-weight: 500;
+            // font-size: 0.75rem;
+            height: 2.25rem;
+            border-radius: 0.25rem;
+            padding: 0.75rem;
+            background-color: $albaster;
+            border: 0.0625rem solid $mercury;
+    
+            &::placeholder {
+                color: black;
+                font-size: 0.85rem;
+                                font-family: 'AvenirNext LT Pro';
+            }
+            &:focus {
+    
+                outline: 2px solid black;
+            }
+    
+            @include tablet {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        &-label {
+            color: $silver;
+            font-weight: 600;
+            font-size: 0.6rem;
+        }
+
+        &-text {
+            height: 6rem;
+            border-radius: 0.25rem;
+            padding: 0.75rem;
+            border: 0.0625rem solid $mercury;
+            background-color: $albaster;
+    
+    
+            &::placeholder {
+                color: black;
+                font-size: 0.85rem;
+                font-family: 'AvenirNext LT Pro';
+            }
+    
+            &:focus {
+                // below lines are commented to show 2 different ways to change the border of an input field
+                // outline: none !important;
+                // border: 2px solid black;
+                outline: 2px solid black;
+            }
+        }
+
+
+
     }
 
-    &__comment-btn {
+
+    &__info-container {
         // border: red solid;
-        background-color: $bandSite-Black;
-        border: none;
-        color: $white;
-        padding: 0.5rem 2rem;
-        height: 2.5rem;
-        border-radius: 4px;
-        font-size: 0.875rem;
-    } 
-}
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
 
-// .form {
 
-//     padding: 1rem;
-//     border: red solid;
+} // end comment form styling
 
-//     &__comment {
 
-//         display: flex;
-//         gap: 1rem;
-
-//         @include tablet {
-
-//         }
-
-//         @include desktop {
-
-//         }
-//         // comment__image-container
-//         &__image-container {
-
-//         }
-
-//         &__field-set {
-//             flex: 1;
-//             display: flex;
-//         }
-
-//         &__container {
-//             border: blue solid;
-//             display: flex;
-//             flex-direction: column;
-//             width: 100%;
-//         }
-
-//         &__comment-text {
-//             // border-style: none;
-//             width: 100%;
-//         }
-//     }
-// }
 
 
 .comment {
     // display: flex;
     // flex-direction: column;
 
-    padding: 1rem;
+    padding: 0rem 1rem 1rem 1rem;
 
     @include tablet {
         padding: 0rem 6rem;
+        // margin-top: 1rem;
     }
 
     &__item {
         display: flex;
         // flex-direction: column;
         // border: red solid;
-        border-top: $mercury 1px solid;
-        gap: 1rem;
+        // border-top: $mercury 1px solid;
+        border-bottom: $mercury 1px solid;
+        gap: 0.75rem;
         // padding: 1rem;
         padding-top: 1rem;
         padding-bottom: 1rem;
+
+        @include tablet {
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
     }
 
     &__value {
@@ -641,6 +743,17 @@ body * {
         // max-height: 100px;
         // max-width: 100px;
         border-radius: 50%;
+
+        &--form {
+            margin-top: 1rem;
+        }
+
+        @include tablet {
+            height: 3rem;
+            width: 3rem;
+            max-height: 3rem;
+            max-width: 3rem;
+        }
     }
 
     &__image-container {
@@ -699,14 +812,15 @@ body * {
 
 .footer {
 
-    @include mobile {
-        background-color: $bandSite-Black;
-        color: $white;
-        padding: 1rem;
-    }
+
+    background-color: $bandSite-Black;
+    color: $white;
+    padding: 1rem;
+    margin-top: 1rem;
 
     @include tablet {
-        padding: 3rem 2.25rem 3rem 2.25rem
+        padding: 3rem 2.25rem 3rem 2.25rem;
+        margin-top: 2rem;
     }
 
     @include desktop {
