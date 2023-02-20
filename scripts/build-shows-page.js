@@ -114,7 +114,7 @@ shows.forEach(show => {
     const btnContainer = document.createElement("div");
     btn.classList.add("shows__btn");
     listItem.appendChild(btn);
-
+    btn.href = "#";
 
     btnContainer.classList.add("btn");
     btnContainer.innerText = "BUY TICKETS";
