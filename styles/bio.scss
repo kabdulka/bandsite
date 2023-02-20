@@ -671,17 +671,30 @@ body * {
             &::placeholder {
                 color: black;
                 font-size: 0.85rem;
-                                font-family: 'AvenirNext LT Pro';
+                font-family: 'AvenirNext LT Pro';
             }
+
             &:focus {
     
                 outline: 2px solid black;
             }
+
     
             @include tablet {
                 padding: 1.5rem 1rem;
                 
             }
+
+            &--error {
+                &:focus {
+                    outline: 2px solid red;
+                }
+                &::placeholder {
+                    color: red;
+                }   
+            }
+
+
         }
 
         &-label {
@@ -714,9 +727,17 @@ body * {
                 // border: 2px solid black;
                 outline: 2px solid black;
             }
+
+            &--error {
+                &:focus {
+                    outline: 2px solid red;
+                }
+                &::placeholder {
+                    color: red;
+                }   
+            }
+
         }
-
-
 
     }
 

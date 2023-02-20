@@ -573,6 +573,18 @@ a {
     padding: 1.5rem 1rem;
   }
 }
+.form__comment-name--error:focus {
+  outline: 2px solid red;
+}
+.form__comment-name--error::-moz-placeholder {
+  color: red;
+}
+.form__comment-name--error:-ms-input-placeholder {
+  color: red;
+}
+.form__comment-name--error::placeholder {
+  color: red;
+}
 .form__comment-label {
   color: #AFAFAF;
   font-weight: 600;
@@ -607,6 +619,18 @@ a {
 }
 .form__comment-text:focus {
   outline: 2px solid black;
+}
+.form__comment-text--error:focus {
+  outline: 2px solid red;
+}
+.form__comment-text--error::-moz-placeholder {
+  color: red;
+}
+.form__comment-text--error:-ms-input-placeholder {
+  color: red;
+}
+.form__comment-text--error::placeholder {
+  color: red;
 }
 .form__info-container {
   display: flex;
