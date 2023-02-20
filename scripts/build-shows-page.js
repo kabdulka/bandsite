@@ -104,17 +104,32 @@ shows.forEach(show => {
     locationItem.appendChild(locationTitle);
     locationItem.appendChild(location);
 
-    const btnContainer = document.createElement("div");
-    btnContainer.classList.add("shows__btn");
-    listItem.appendChild(btnContainer);
+
+//     <a href="www.google.com" class="shows__btn">
+//     <!-- TODO  make the button clickable anywhere -->
+//     <div class="btn" > BUY TICKETS </div>
+// </a>
 
     const btn = document.createElement("a");
-    btn.classList.add("btn");
-    btn.innerText = "BUY TICKETS";
-    btnContainer.appendChild(btn);
+    const btnContainer = document.createElement("div");
+    btn.classList.add("shows__btn");
+    listItem.appendChild(btn);
 
 
-    
+    btnContainer.classList.add("btn");
+    btnContainer.innerText = "BUY TICKETS";
+    btn.appendChild(btnContainer);
+
+
+    listItem.addEventListener("click", (event) => {
+
+        const listItems = document.querySelectorAll(".shows__item");
+        listItems.forEach(item => {
+            item.classList.remove("shows__item--clicked");
+        })
+
+        event.currentTarget.classList.add("shows__item--clicked");
+    } );
 
     //hover events
 
@@ -141,19 +156,34 @@ shows.forEach(show => {
 
 
 
+////// WORK ON clicking show items
+
+
 
 const showItems = document.querySelectorAll(".shows__item");
 
-// showItems.froEach( show => {
-//     show.addEventListener("click", (event) => {
 
-//     })
-// }) 
+// console.log(showItems);
 
 
-addEventListener("click", (event) => {
+// showItems.addEventListener("click", (event) => {
+//     //remove the class from all items
+//     // then add it
+//     console.log("click click")
+//     showItems.froEach( show => {
 
-} )
+//         show.classList.removed("shows__item--clicked");
+//     });
+    
+//     event.target.classList.add("shows__item--clicked");
+
+// })
+
+
+
+// addEventListener("click", (event) => {
+
+// } )
 
 console.log(showItems)
 showItems.forEach (item => {

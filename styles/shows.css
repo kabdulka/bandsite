@@ -246,6 +246,9 @@ img {
   padding: 1.5rem 1.25rem 1.5rem 1.25rem;
   border-bottom: 1px #E1E1E1 solid;
 }
+.shows__item--clicked {
+  background-color: #E1E1E1;
+}
 @media (min-width: 768px) {
   .shows__item {
     flex-direction: row;
@@ -255,9 +258,6 @@ img {
 }
 .shows__item--hover {
   background-color: #FAFAFA;
-}
-.shows__item:active {
-  background-color: #E1E1E1;
 }
 .shows__item--title {
   border: none;

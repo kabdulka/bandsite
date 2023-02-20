@@ -334,7 +334,9 @@ img {
         border-bottom: 1px $mercury solid;
         // margin-top: 1rem;
         
-        
+        &--clicked {
+            background-color: $mercury;
+        }
 
         @include tablet {
             flex-direction: row;
@@ -356,9 +358,9 @@ img {
             background-color: $albaster;
         }
 
-        &:active {
-            background-color: $mercury;
-        }
+        // &:active {
+        //     background-color: $mercury;
+        // }
 
         &--title {
             border: none;
@@ -603,6 +605,7 @@ img {
 .btn {
     // height: 100%;
     // border: red solid;
+    
     color: $white;
     font-size: 1rem;
     font-weight: 600;
