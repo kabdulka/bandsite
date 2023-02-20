@@ -49,6 +49,9 @@ shows.forEach(show => {
 
     // create an li element
     const listItem = document.createElement("li");
+
+ 
+
     // give it a class name of shows__item
     listItem.classList.add("shows__item");
     showsList.appendChild(listItem);
@@ -107,7 +110,7 @@ shows.forEach(show => {
 
     const btn = document.createElement("a");
     btn.classList.add("btn");
-    btn.innerText = "BUY TICKET";
+    btn.innerText = "BUY TICKETS";
     btnContainer.appendChild(btn);
 
 
@@ -137,7 +140,21 @@ shows.forEach(show => {
 // })
 
 
+
+
 const showItems = document.querySelectorAll(".shows__item");
+
+// showItems.froEach( show => {
+//     show.addEventListener("click", (event) => {
+
+//     })
+// }) 
+
+
+addEventListener("click", (event) => {
+
+} )
+
 console.log(showItems)
 showItems.forEach (item => {
     item.addEventListener("mouseover", (event) => {
@@ -156,7 +173,10 @@ showItems.forEach( item => {
         // item.style.color = "black"; 
         item.classList.toggle("shows__item--hover");
     })
-} )
+})
+
+
+
 
 // let tabletBreakpoint = window.matchMedia("(max-width: 700px)");
 // console.log(tabletBreakpoint);

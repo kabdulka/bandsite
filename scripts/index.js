@@ -113,7 +113,7 @@ commentForm.addEventListener("submit", (event) => {
     event.preventDefault();
     // commentForm.reset();
     // console.log(event.target.comment.value);
-    commentObj = {};
+    const commentObj = {};
 
     let error = false;
 
@@ -142,9 +142,10 @@ commentForm.addEventListener("submit", (event) => {
         commentObj.name = event.target.name.value;
         commentObj.comment = event.target.comment.value;
         const postedDate = new Date(Date.now());
-        console.log(`timestamp is ${postedDate}`);
+        // console.log(`timestamp is ${postedDate}`);
         postedDate.toLocaleDateString('en-US');
-
+        console.log(`Date dot now is ${Date.now()}`);
+        
         // commentObj.date = Date.now();
         // console.log(`${postedDate.getMonth()}/${postedDate.getDate()}/${postedDate.getFullYear()}`);
         let day = postedDate.getDate() + "";
@@ -175,10 +176,10 @@ commentForm.addEventListener("submit", (event) => {
 
         commentObj.date = `${month}/${day}/${year}`;
         commentObj.timestanp = Date.parse(commentObj.date) + totalTimeInSec;
-        console.log(`Total timestamp is ${commentObj.timestanp}`);
-        // console.log(commentObj.date.getTime());
-        console.log("hererere")
-        console.log(Date.parse(commentObj.date));
+        // console.log(`Total timestamp is ${commentObj.timestanp}`);
+        // // console.log(commentObj.date.getTime());
+        // console.log("hererere")
+        // console.log(Date.parse(commentObj.date));
         // const date = new Date(1666632563517);
         // console.log(date.toLocaleDateString('en-US'));
 
@@ -208,7 +209,6 @@ commentForm.addEventListener("submit", (event) => {
         // convert 
     } else {
         // display error
-        console.log("errorrrr");
         // event.target.name.placeholder.style.color = "red";
         event.target.name.placeholder = "Please enter a name";
         event.target.name.classList.add("form__comment-name--error");
