@@ -1,12 +1,12 @@
 @use './variables' as *;
 @use './mixins' as *;
 
+@use './fonts' as *;
 
-// global declarations 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'AvenirNext LT Pro';
+    font-family: 'AvenirNext LT Pro', arial;
     box-sizing: border-box;
 }
 
@@ -26,13 +26,13 @@ body * {
   // ----------------------------- header/nav ----------------------------- //
 
   .header {
-    // @include mobile {
-        height: 5rem;
-        background-color: $bandSite-Black;
-        display: flex;
-        flex-direction: column;
 
-    // }
+    height: 5rem;
+    background-color: $bandSite-Black;
+    display: flex;
+    flex-direction: column;
+
+
 
     @include tablet {
 
@@ -44,36 +44,29 @@ body * {
 
     @include desktop {
         height: 5.35rem;
-        // flex-direction: row;
         padding-left: 8rem;
         gap: 3.5rem;
     }
 
     &__logo-container {
 
-        // @include mobile {
             padding-top: 0.5rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            // border: green solid;
             height: 100%;
 
             
             &__image {
-                // @include mobile {
                     height: 1.2rem;
-                // }
 
                 @include tablet {
 
                 }
 
                 @include desktop {
-                    // height: 1.15rem;
                 }
             }
-        // }
 
         @include tablet {
             padding-top: 0rem;
@@ -83,7 +76,6 @@ body * {
 
 }
 
-// Text size: 24px | Line height: 32px | Text weight: Bold 700
 .title {
     @include heading-text;
     padding: 8px;
@@ -92,9 +84,7 @@ body * {
 }
 
 .nav {
-    // @include mobile {
         height: 50%;
-    // }
 
     @include tablet {
         height: 100%;
@@ -102,13 +92,11 @@ body * {
 
     &__list {
 
-        // @include mobile {
             height: 100%;
             width: 100%;
             display: flex;
             list-style: none;
             justify-content: space-around;
-        // }
 
         @include tablet {
             gap: 3.4rem;
@@ -122,28 +110,21 @@ body * {
     
     &__anchor-container {
 
-        // @include mobile {
             height: 100%;
-            // border: white solid;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 0.8rem;
             font-weight: 500;
             padding-bottom: 0.5rem;
-            // border-bottom: white 0.25rem solid;
-
-            // @include mobile {
-                // nav__anchor-container--active
+// here
                 &--active {
                     font-weight: 600;
                 }
-            // }
-        // }
+
 
         @include tablet {
-            // padding-bottom: 0rem;
-            // font-size: 1.15rem;
+
             
         }
 
@@ -153,30 +134,23 @@ body * {
     }
 
     &__item {
-        //TODO
-        // @include mobile {
-            // border: yellow solid;
+
 
             width: 50%;
             height: 100%;
             display: flex;
             justify-content: center;
 
-        // }
 
     }
 
     &__link {
 
-        // TODO mobile adjustment
-        // @include mobile {
-            // Text size: 10px | Line height: 20px | Text weight: Bold 700
             text-decoration: none;
             color: $silver;
             font-weight: 700;
             width: 100%;
             text-align: center;
-        // }
 
         @include tablet {
 
@@ -188,12 +162,10 @@ body * {
     }
 
     &__link--active {
-        // @include mobile {
             color: white;
             font-weight: 700;
             width: 100%;
             border-bottom: white 0.2rem solid;
-        // }
 
         @include tablet {
 
@@ -207,20 +179,31 @@ body * {
 
 .hero-background {
 
-    // @include mobile {
+
     height: 11.75rem;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('../assets/Images/hero-bio.jpg') center/cover;
     height: 20rem;
-    // background-size: cover;
-    // background-position: center;
+
     display: flex;
     align-items: center;
-    // }
+    gap: 1rem;
 
     &--shows {
         background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('../assets/Images/hero-shows.jpg') center/cover;
         flex-direction: column;
+        align-items: flex-start;
+        padding: 2.5rem 1rem 2rem 1rem;
+    
 
+        @include tablet {
+            height: 35rem;
+            padding: 3rem 2rem 2rem 2rem;
+        }
+    
+        @include desktop {
+            height: 45rem;
+            padding: 11rem 8rem 2rem 8rem;
+        }
     }
 
     @include tablet {
@@ -235,20 +218,16 @@ body * {
 
 .hero-text {
  
-    // @include mobile {
-        margin-left: 1rem;
+
         font-size: 1.5rem;
         font-weight: 600;
         color: $white;
-    // }
 
     @include tablet {
-        margin-left: 2.25rem;
         font-size: 3.85rem;
     }
 
     @include desktop {
-        margin-left: 8rem;
         font-size: 3.75rem;
     }
 }
@@ -290,7 +269,6 @@ body * {
 }
 
 .footer-intro {
-    border: blue solid;
     @include mobile {
         display: flex;
         flex-direction: column;
@@ -299,8 +277,7 @@ body * {
 
     @include tablet {
         flex-direction: row;
-        // gap: 8.5rem;
-        // gap: 10%;
+
         gap: 1rem;
         position: relative;
     }
@@ -311,7 +288,6 @@ body * {
 }
 
 .footer-title {
-    border: green solid;
     @include mobile {
         font-weight: 600;
         font-size: 1.5rem;
@@ -331,7 +307,6 @@ body * {
 }
 
 .flex-container {
-    border: white solid;
     @include mobile {
         color: $white;
         display: flex;
@@ -343,7 +318,6 @@ body * {
     @include tablet {
         margin-top: 1.5rem;
         flex-direction: row;
-        // gap: 2rem;
     }
 
     @include desktop {
@@ -357,9 +331,7 @@ body * {
     }
 
     @include tablet {
-        // height: 100%;
         width: 67%;
-        border: red solid;
     }
 
     @include desktop {
@@ -368,7 +340,6 @@ body * {
 }
 
 .icon-container {
-    border: green solid;
     @include mobile {
         display: flex;
         align-items: center;
@@ -386,16 +357,13 @@ body * {
 
     @include desktop {
         right: 48.5%;
-        // gap: 1.25rem;
         width: 25%;
     }
 
     &__image {
 
-        @include mobile {
             height: 1.45rem;
             width: 1.5rem;
-        }
 
         @include tablet {
             height: 1.6rem;
@@ -409,7 +377,7 @@ body * {
 
 
 .contact {
-    border: red solid;
+    // border: red solid;
     @include mobile {
 
         font-size: 0.875rem;

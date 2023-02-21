@@ -5,7 +5,6 @@
 @use './partials/fonts' as *;
 
 
-
 // global declarations
 
 body {
@@ -39,12 +38,65 @@ img {
 
 
 
+.hero-text--1 {
+    font-size: 0.875rem;
+
+    @include tablet {
+        font-size: 1.5rem;
+    }
+}
+
+.hero-text--2 {
+    width: 15rem;
+    line-height: 1.5;
+    
+    @include tablet {
+        font-size: 3.75rem;
+        width: 35rem;
+        line-height: 1.25;
+    }
+
+    @include desktop {
+        width: 52%;
+    }
+}
+
+.hero__flex-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @include tablet {
+        gap: 2rem;
+    }
+
+    @include desktop {
+        flex-direction: row;
+        gap: 7rem;
+        width: 100%;
+    }
+}
+
+iframe {
+    width: 100%;
+    height: 7rem;
+}
+
+.sound__cloud {
+
+
+    @include tablet {
+        width: 75%;
+    }
+
+    @include desktop {
+        width: 50%;
+    }
+    
+}
 
 // ----------------------------- Main/Shows ----------------------------- //
 
-.filler {
-    // width: 10%;
-}
 
 .shows {
 
@@ -52,50 +104,41 @@ img {
     padding-bottom: 1rem;
 
     @include tablet {
-        //TODO
     }
 
     @include desktop {
-        //TODO
     }
 
     &__label {
         display: none;
 
         @include tablet {
-            // border: green solid;
             display: flex;
             flex-direction: row;
-            // gap: 1rem;
-            // justify-content: space-between;
+
             padding: 0rem 2rem 0rem 2rem;
             width: 100%;
-            // gap: 1rem;
-            // gap: 1.25rem;
-            // border-bottom: 1px $mercury solid;
+
             margin-top: 3rem;
             margin-bottom: 2rem;
         }
 
         @include desktop {
-            //TODO
         }
 
         &-date, &-venue, &-location {
             
             @include tablet {
                 width: 33%;
-                // border: red solid;
+
                 font-size: 0.75rem;
                 color: $silver;
                 font-weight: 600;
-                // justify-content: center;
             }
 
         }
 
         &--container {
-            // border: green solid;
             display: flex;
             flex-direction: row;
             width: 75%;
@@ -112,85 +155,66 @@ img {
         padding-right: 1rem;
 
         @include tablet {
-            //TODO
             font-size: 2.25rem;
-            // border: green solid;
             padding-right: 2.25rem;
             padding-left: 2.25rem;
             margin-top: 2rem;
         }
     
         @include desktop {
-            //TODO
             position: relative;
             padding-left: 8rem;
-            // top: 90rem;
             top: 3.25rem;
         }
     }
 
     &__list {
         list-style: none;
-        // border: green solid;
         @include tablet {
             padding-right: 1rem;
             padding-left: 1rem;
-            //TODO
         }
     
         @include desktop {
-            //TODO
             padding-right: 6rem;
             padding-left: 23.25rem;
         }
     }
 
     &__item {
-        // border: red solid;
-        // background-color: rgb(235, 225, 225);
+
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        // padding-bottom: 1rem;
-        // padding: 1rem 1rem 1rem 1rem;
-        // padding: 0.5rem;
+  
         padding: 1.5rem 1.25rem 1.5rem 1.25rem;
-        // padding: 1rem;
-        // padding-right: 1rem;
-        // padding-left: 1rem;
-        // padding-top: 1rem;
-        // padding-bottom: 1rem;
+     
         border-bottom: 1px $mercury solid;
-        // margin-top: 1rem;
+
+        &:hover {
+            background-color: $albaster;
+        }
         
         &--clicked {
             background-color: $mercury;
+            &:hover {
+                background-color: $mercury;
+            }
         }
+
+   
 
         @include tablet {
             flex-direction: row;
-            // justify-content: space-between;
-            // gap: 2rem;
-            // padding: 0rem 1rem 2rem 2rem;
-            // padding-right: 2rem;
-            // padding-left: 2rem;
-            // align-items: center;
             margin: auto;
             gap: 1.25rem;
         }
 
         @include desktop {
-            //TODO
             gap: 1.75rem;
         }
 
-        &--hover {
-            background-color: $albaster;
-        }
 
-        // &:active {
-        //     background-color: $mercury;
-        // }
 
         &--title {
             border: none;
@@ -202,26 +226,21 @@ img {
     }
 
     &__date {
-        // border: blue solid;
 
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
 
         @include tablet {
-            //TODO
-            // margin: auto;
-            // width: 33%;
+     
             display: flex;
             width: 33%;
             justify-content: center;
-            /* align-content: center; */
-            // align-items: center;
 
         }
 
         @include desktop {
-            //TODO
+
         }
         
     }
@@ -231,15 +250,13 @@ img {
         font-weight: 600;
         color: $silver;
         text-transform: uppercase;
-        // color: #E1E1E1;
-        // display: "none";
+
         @include tablet {
-            //TODO
             display: none;
         }
 
         @include desktop {
-            //TODO
+
         }
 
         &--allow {
@@ -257,33 +274,27 @@ img {
         font-weight: 600;
 
         @include tablet {
-            //TODO
             font-size: 0.875rem;
         }
 
         @include desktop {
-            //TODO
         }
     }
 
     &__venue {
-        // border: blue solid;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
 
         @include tablet {
-            //TODO
-            // width: 33%;
+
             display: flex;
             width: 33%;
             justify-content: center;
-            /* align-content: center; */
-            // align-items: center;
+
         }
 
         @include desktop {
-            //TODO
             padding-left: 3rem;
         }
     }
@@ -295,12 +306,10 @@ img {
         text-transform: uppercase;
 
         @include tablet {
-            //TODO
             display: none;
         }
 
         @include desktop {
-            //TODO
         }
 
         &--allow {
@@ -319,36 +328,30 @@ img {
         font-weight: 500;
 
         @include tablet {
-            //TODO
             font-size: 0.875rem;
 
         }
 
         @include desktop {
-            //TODO
         }
     }
 
     &__location {
 
-        // border: blue solid;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
         
 
         @include tablet {
-            //TODO
-            // width: 33%;
+
             display: flex;
             width: 33%;
             justify-content: center;
-            /* align-content: center; */
-            // align-items: center;
+
         }
 
         @include desktop {
-            //TODO
         }
     }
 
@@ -360,12 +363,10 @@ img {
         text-transform: uppercase;
 
         @include tablet {
-            //TODO
             display: none;
         }
 
         @include desktop {
-            //TODO
         }
 
         &--allow {
@@ -384,19 +385,16 @@ img {
         font-weight: 500;
 
         @include tablet {
-            //TODO
             font-size: 0.875rem;
 
         }
 
         @include desktop {
-            //TODO
         }
     }
 
     &__info {
 
-        // border: green solid;
         display: flex;
         flex-direction: column;
         gap: 1rem;
@@ -404,8 +402,7 @@ img {
         @include tablet {
             display: flex;
             flex-direction: row;
-            // gap: 1rem;
-            // justify-content: space-between;
+
             width: 75%;
             gap: 1.25rem;
         }
@@ -417,306 +414,42 @@ img {
 
 
     &__btn {
-        // border: blue solid;
-        // text-align: center;
+
         background-color:$bandSite-Black;
-        // padding: 0.5rem 2rem;
         border-radius: 4px;
         width: 100%;
         height: 2.5rem;
-        // margin:auto;
         display: flex;
 
         @include tablet {
-            //TODO
-            // width: 25%;
-            border: red solid;
+
             width: 22%;
         }
 
         @include desktop {
-            //TODO
+            
             width: 20%;
         }
 
         &--filler {
             display: none;
-            // height: 0rem;
+         
         }
     }
 
 }// end shows container
 
 .btn {
-    // height: 100%;
-    // border: red solid;
+
     
     color: $white;
     font-size: 1rem;
     font-weight: 600;
     margin:auto;
-    // vertical-align: auto;
-    // line-height: 20px;
-    // margin: auto;
-    // justify-content: center;
-    // align-content: center;
+
 }
 
 
-
-
-// -------------------------------------------------- Footer ------------------------------------------------------------
-
-// footer {
-
-//     // @include mobile {
-//         background-color: $bandSite-Black;
-//         color: $white;
-//         padding: 1rem;
-//         margin-top: 1.5rem;
-//     // }
-
-//     @include tablet {
-//         padding: 3rem 2.25rem 3rem 2.25rem
-//     }
-
-//     @include desktop {
-//         padding-left: 8rem;
-//         padding-right: 8rem;
-//     }
-// } // end footer
-
-// .footer-wrapper {
-
-
-//     @include tablet {
-//         position: relative;
-//     }
-
-//     @include desktop {
-        
-//     }
-// }
-
-// .footer-intro {
-//     // border: blue solid;
-//     // @include mobile {
-//         display: flex;
-//         flex-direction: column;
-//         gap: 1rem;
-//     // }
-
-//     @include tablet {
-//         flex-direction: row;
-//         // gap: 8.5rem;
-//         // gap: 10%;
-//         gap: 1rem;
-//         position: relative;
-//     }
-
-//     @include desktop {
-//         gap: 1rem;
-//     }
-// }
-
-// .footer-title {
-//     // border: green solid;
-//     // @include mobile {
-//         font-weight: 600;
-//         font-size: 1.5rem;
-//         color: $white;
-//         margin-top: 0.5rem;
-//     // }
-
-//     @include tablet {
-//         font-size: 2.2rem;
-//         width: 33%;
-//     }
-
-//     @include desktop {
-//         font-size: 2.3rem;
-//         width: 25%;
-//     }
-
-// }
-
-// .flex-container {
-//     // border: white solid;
-//     // @include mobile {
-//         color: $white;
-//         display: flex;
-//         flex-direction: column;
-//         margin-top: 0.5rem;
-//         gap: 1rem;
-//     // }
-
-//     @include tablet {
-//         margin-top: 1.5rem;
-//         flex-direction: row;
-//         // gap: 2rem;
-//     }
-
-//     @include desktop {
-
-//     }
-// }
-
-// .filler {
-
-
-//     @include tablet {
-//         // height: 100%;
-//         width: 67%;
-//         // border: red solid;
-//     }
-
-//     @include desktop {
-//         width: 50%;
-//     }
-// }
-
-// .icon-container {
-//     // border: green solid;
-//     // @include mobile {
-//         display: flex;
-//         align-items: center;
-//         gap: 1.5rem;
-
-//     // }
-
-//     @include tablet {
-//         position: absolute;
-//         right: 33%;
-//         top: 20%;
-//         gap: 1.25rem;
-//         width: 33%;
-//     }
-
-//     @include desktop {
-//         right: 48.5%;
-//         // gap: 1.25rem;
-//         width: 25%;
-//     }
-
-//     &__image {
-
-//         // @include mobile {
-//             height: 1.45rem;
-//             width: 1.5rem;
-//         // }
-
-//         @include tablet {
-//             height: 1.6rem;
-//         }
-
-//         @include desktop {
-//             height: 1.65rem;
-//         }
-//     }
-// }
-
-
-// .contact {
-//     // border: red solid;
-//     // @include mobile {
-
-//         font-size: 0.875rem;
-        
-//         &__container {
-//             // border: blue;
-//             // @include mobile {
-//                 margin-top: 1rem;
-//             // }
-//         }
-//     // }
-
-//     @include tablet {
-//         font-size: 0.875rem;
-//         display: flex;
-//         flex-direction: column;
-//         gap: 0.75rem;
-//         width: 33%;
-//     }
-
-//     @include desktop {
-//         gap: 0.75rem;
-//         width: 25%;
-//     }
-
-//     &__name, &__org {
-
-//         // @include mobile {
-//             font-size: 0.875rem;
-//             font-weight: 600;
-//         // }
-
-//         @include tablet {
-//             font-size: 0.875rem;
-//             font-weight: 600;
-//         }
-
-//         @include desktop {
-//            // No need 
-//         }
-//     }
-
-//     &__details, &__address {
-
-  
-
-//         @include tablet {
-//             font-size: 0.875rem;
-//         }
-
-//         @include desktop {
-//         }
-        
-//     }
-  
-// }
-
-// // bandsite logo image wrapper
-// .logo-image_wrapper {
-//     display: flex;
-// }
-
-// // bandsite logo image
-// .logo-image_wrapper--tablet {
-//     @include tablet {
-//         position: absolute;
-
-//         bottom: 87%;
-//         right: 0%;
-//     }
-
-// }
-
-// .footer__logo-image {
-//     // @include mobile {
-//         max-height: 1.25rem;
-//         max-width: 7rem;
-//         margin-top: 4.5rem;
-//     // }
-
-//     @include tablet {
-//         max-height: 1.75rem;
-//         margin-top: 3rem;
-//     }
-// }
-
-// .copyright {
-
-//     // @include mobile {
-//         font-size: 0.7rem;
-//         margin-top: 1rem;
-//     // }
-
-//     @include tablet {
-//         margin-top: 3rem;
-//         font-size: 0.875rem;
-//     }
-    
-// }
 
 
 
