@@ -1,5 +1,5 @@
 // are we going to get the name as a single string or will it be 2 different strings or properties
-
+// comment objects
 let comments = [
 
     {
