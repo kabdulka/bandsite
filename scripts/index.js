@@ -202,10 +202,6 @@ commentForm.addEventListener("submit", (event) => {
 
         console.log(comments);
 
-        // comments.forEach ((e) => {
-        //     console.log(e.name);
-        // })
-
         // convert 
     } else {
         // display error
@@ -265,18 +261,6 @@ function clearComments (parent) {
     }
 
 }
-
-// You must have an array in JavaScript with 3 default comment objects to start. Comments must have a name, a timestamp, and the comment text.
-// You must have a function called displayComment() that takes in one comment object as a parameter and displays it on the page using JavaScript DOM manipulation.
-// All dynamic HTML should be added to DOM via DOM Methods for individual elements. Avoid bulk assigning stringified HTML using innerHTML
-// You must use an HTML Form with the following functionality:
-// That submits using the addEventListener
-// Prevents the page from reloading when submitting a new comment
-// Constructs a new comment object
-// Pushes a new comment object to an array of comments
-// Clears all comments from the page
-// Re-renders to the page all comments from the comment array
-// Clears the input fields after submitting a new commen
 
 
 // let arr = [1,2,3,145,5]
