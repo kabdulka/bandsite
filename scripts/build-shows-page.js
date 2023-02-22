@@ -1,41 +1,41 @@
 // global declarations
 
 let shows = [
-    {
-        date: "Mon Sept 06 2021",
-        venue: "Ronald Lane",
-        location: "San Francisco, CA"
-    },
+    // {
+    //     date: "Mon Sept 06 2021",
+    //     venue: "Ronald Lane",
+    //     location: "San Francisco, CA"
+    // },
 
-    {
-        date: "Tue Sept 21 2021",
-        venue: "Pier 3 East",
-        location: "San Francisco, CA"
-    },
+    // {
+    //     date: "Tue Sept 21 2021",
+    //     venue: "Pier 3 East",
+    //     location: "San Francisco, CA"
+    // },
 
-    {
-        date: "Fri Oct 15 2021",
-        venue: "View Lounge",
-        location: "San Francisco, CA"
-    },
+    // {
+    //     date: "Fri Oct 15 2021",
+    //     venue: "View Lounge",
+    //     location: "San Francisco, CA"
+    // },
     
-    {
-        date: "Sat Nov 06 2021",
-        venue: "Hyatt Agency",
-        location: "San Francisco, CA"
-    },
+    // {
+    //     date: "Sat Nov 06 2021",
+    //     venue: "Hyatt Agency",
+    //     location: "San Francisco, CA"
+    // },
 
-    {
-        date: "Fri Nov 26 2021",
-        venue: "Moscow Center",
-        location: "San Francisco, CA"
-    },
+    // {
+    //     date: "Fri Nov 26 2021",
+    //     venue: "Moscow Center",
+    //     location: "San Francisco, CA"
+    // },
 
-    {
-        date: "Wed Dec 15 2021",
-        venue: "Press Club",
-        location: "San Francisco, CA"
-    }
+    // {
+    //     date: "Wed Dec 15 2021",
+    //     venue: "Press Club",
+    //     location: "San Francisco, CA"
+    // }
 
 ];
 
@@ -45,8 +45,10 @@ const showsList = document.querySelector(".shows__list");
 // for each index, append a chile for each one and add a class
 
 // TODO Make this into a function called display...
-shows.forEach(show => {
+// shows.forEach(show => {
 
+
+function displayShow (show) {
     // create an li element
     const listItem = document.createElement("li");
 
@@ -126,14 +128,83 @@ shows.forEach(show => {
         event.currentTarget.classList.add("shows__item--clicked");
     } );
 
+}
+// });
 
-});
+// formats the data 
+function parseDate (showDate) {
+    const date = new Date(showDate);
+    // console.log(showDate.toLocaleDateString('en-US'));
+    // date = new Date(Date.now());
+    // const formatedDate = date.toLocaleDateString('en-US');
+    const formatedDate = date.toDateString();
+    return formatedDate;
+} 
+// console.log(Date.now());
+
+// const date = new Date(Date.now());
+// console.log(date)
+console.log(parseDate(Date.now()));
+// console.log(parseDate())
+
 
 
 const showItems = document.querySelectorAll(".shows__item");
 
+const apiKey = `fc20d90b-f207-490e-9533-e30b46cf95fc`;
+const getRequest = 'showdates';
+const showsUrl = `https://project-1-api.herokuapp.com/${getRequest}?api_key=${apiKey}`;
+
+function getAPIShowssData (url) {
+    let data;
+    axios
+    .get(url)
+    .then((response) => {
+        console.log(response.data);
+        // console.log(response.data);
+        // return response.data;
+
+        
+        const showsDataApi = response.data;
+
+        // traverse all shows returned from the API request
+        // and use them to populate the comments array.
+        // Lastly, push the new show object into the shows Array
+        showsDataApi.forEach ( show => {
+            const showObj = {};
+            // parseDate(show.date)
+            // Why is the parsed date a day before?
+            showObj.date = parseDate(show.date);
+            showObj.venue = show.location;
+            showObj.location = show.place;
+            showObj.id = show.id;
+
+            shows.push(showObj);
+        })
+       
+        // const date = response.data ;
+
+        shows.forEach (show => {
+            console.log(show.venue);
+            console.log(show.date);
+        }) 
+
+        populateShowsUI();
+
+      })
+  }
+
+  console.log(getAPIShowssData(showsUrl))
+//   const showsApiData = getAPIShowssData(showsUrl);
+
+//   console.log(showsApiData[0].place)
 
 
 
+function populateShowsUI () {
+    shows.forEach (show => {
+        displayShow(show);
+    }) 
+}
 
 
