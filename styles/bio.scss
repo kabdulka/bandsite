@@ -439,6 +439,8 @@
 
         }
 
+
+
     }
 
 
@@ -553,7 +555,18 @@
         }
     }
 
+    &__edit {
+        display: flex;
+        gap: 1rem;
+    }
 
+    &__delete {
+        cursor: pointer;
+    }
+
+    &__like {
+        cursor: pointer;
+    }
 
 }
 

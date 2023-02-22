@@ -1,8 +1,10 @@
 const apiKey = `fc20d90b-f207-490e-9533-e30b46cf95fc`;
 const getRequest = 'comments';
 const apiUrl = `https://project-1-api.herokuapp.com/${getRequest}?api_key=${apiKey}`;
+let commentId = "";
+// const apiDelete = `https://project-1-api.herokuapp.com/${getRequest}/${commentId}/?api_key=${apiKey}`;
 
-
+//https://project-1-api.herokuapp.com/comments/6f2f6250-0c01-4c08-94cf-d69341b111aa/?api_key=fc20d90b-f207-490e-9533-e30b46cf95fc
 // are we going to get the name as a single string or will it be 2 different strings or properties
 // comment objects
 let comments = [
@@ -73,6 +75,41 @@ function displayComment(comment) {
         date.innerText = getFormatedDate(comment.timestamp);
         commentText.innerText = comment.comment;
 
+        const editCommentContainer = document.createElement("div");
+        const likeCommentIcon = document.createElement("img");
+ 
+        const deleteCommentIcon = document.createElement("img");
+        likeCommentIcon.src = "./assets/Icons/SVG/icon-like.svg";
+        deleteCommentIcon.src = "./assets/Icons/SVG/icon-delete.svg";
+        commentInfo.appendChild(editCommentContainer);
+        editCommentContainer.appendChild(likeCommentIcon);
+        editCommentContainer.appendChild(deleteCommentIcon);
+        editCommentContainer.classList.add("comment__edit");
+        likeCommentIcon.classList.add("comment__like");
+        deleteCommentIcon.classList.add("comment__delete");
+        
+        deleteCommentIcon.addEventListener("click", event => {
+            // commentId = comment.id;
+            const apiDelete = `https://project-1-api.herokuapp.com/${getRequest}/${comment.id}/?api_key=${apiKey}`;
+            console.log("click");
+            console.log("printing comment ID: " + comment.id);
+            console.log(apiDelete);
+            axios.delete(apiDelete)
+            .then(response => {
+        
+                console.log(`The deleted element is: ${response.data}`)
+                commentList.innerHTML = "";
+                
+                
+                console.log("the array has: " + comments.length + " elements")
+                getAPICommentsData(apiUrl);
+                // renderComments(comments);
+            })
+            .catch(error => {
+                console.log(`Error: ${error}`);
+            })
+        })
+
 } // end displayComment function
 
 
@@ -109,10 +146,10 @@ commentForm.addEventListener("submit", (event) => {
             event.target.name.placeholder = "Please enter your name";
             event.target.comment.placeholder = "Add a new comment";
             
-            comments.push(commentObj);
-            console.log(comments.length);
+            // comments.push(commentObj);
+            console.log(commentObj.id);
       
-    
+            
             // sorts the array in decending order
             // another way to solve this problem is to only display the last 3 elements of an array
             comments.sort ( (a,b) => {
@@ -127,27 +164,26 @@ commentForm.addEventListener("submit", (event) => {
             commentForm.reset();
             // clearComments(commentList);
             commentList.innerHTML = "";
-            
-            renderComments(comments);
+            getAPICommentsData(apiUrl);
+            // renderComments(comments);
             // location.reload();
+
+            
 
         })
         .catch((error) => {
             console.log("error: ", error);
         });
 
+        } else {
+            // one or both fields are empty
+            event.target.name.placeholder = "Please enter a name";
+            event.target.name.classList.add("form__comment-name--error");
+            event.target.comment.placeholder = "Please enter a comment";
+            event.target.comment.classList.add("form__comment-text--error");
+        }
 
-
-    } else {
-        // one or both fields are empty
-        event.target.name.placeholder = "Please enter a name";
-        event.target.name.classList.add("form__comment-name--error");
-        event.target.comment.placeholder = "Please enter a comment";
-        event.target.comment.classList.add("form__comment-text--error");
-    }
-
-
-});
+    });
 
 function getFormatedDate (timeStamp) {
     const postedDate = new Date(timeStamp);
@@ -187,10 +223,6 @@ function clearComments (parent) {
     }
 }// end clearComments function
 
-
-
-
-
 function getAPICommentsData (url) {
  
         axios
@@ -207,14 +239,14 @@ function getAPICommentsData (url) {
                 commentObj.id = comment.id;
                 commentObj.comment = comment.comment;
                 console.log(`the time stamp here is: ${commentObj.timestamp}`);
-                comments.push(commentObj);
+                // comments.push(commentObj);
            
             });
 
-            comments.sort( (a,b) => {
+            commentsData.sort( (a,b) => {
                 return b.timestamp - a.timestamp;
             })
-            renderComments(comments);
+            renderComments(commentsData);
 
         }).catch(error => {
             console.log("Error ", error);
@@ -233,7 +265,6 @@ getAPICommentsData(apiUrl);
 //     const formatedDate = date.toDateString();
 //     return formatedDate;
 // } 
-
 
 
 

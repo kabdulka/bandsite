@@ -913,4 +913,14 @@ a {
   .comment__date {
     font-size: 0.875rem;
   }
+}
+.comment__edit {
+  display: flex;
+  gap: 1rem;
+}
+.comment__delete {
+  cursor: pointer;
+}
+.comment__like {
+  cursor: pointer;
 }/*# sourceMappingURL=bio.css.map */
