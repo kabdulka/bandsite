@@ -69,7 +69,8 @@ function displayComment(comment) {
         commentInfoRow2.appendChild(commentText);
 
         name.innerText = comment.name;
-        date.innerText = comment.date;
+        // change here
+        date.innerText = getFormatedDate(comment.timestamp);
         commentText.innerText = comment.comment;
 
 } // end displayComment function
@@ -102,47 +103,14 @@ commentForm.addEventListener("submit", (event) => {
         .then((response) => {
             const commentObj = response.data;
             console.log(`printing Object info: likes: ${commentObj.likes}, name: ${commentObj.name}`);
-            // const postDate = new Date(Daten.now());
-            const postedDate = new Date(commentObj.timestamp);
-            postedDate.toLocaleDateString('en-US');
-            
-            // console.log("likes are: " + commentObj.likes);
-         
-            let day = postedDate.getDate() + "";
-            let month = postedDate.getMonth() + "";
-            let year = postedDate.getFullYear() + "";
-            let hoursInSeconds = postedDate.getHours()*3600;
-            let minutesInSeconds = postedDate.getMinutes()*60;
-            let seconds = postedDate.getSeconds();
-            let totalTimeInSec = hoursInSeconds + minutesInSeconds + seconds;
-       
-            // console.log(`time in ms ${totalTimeInSec}`);
-    
-            if (postedDate.getMonth()/10 < 1 ) {
-    
-                month = "0" + month;
-            }
-            if (postedDate.getDate()/10 < 1 ) {
-                day = "0" + day;
-            }
-    
-            commentObj.date = `${month}/${day}/${year}`;
-            console.log(`testing for date ${commentObj.date}`);
-            // commentObj.timestamp = Date.parse(commentObj.date) + totalTimeInSec;
-            // console.log(`testing for date ${commentObj.timestamp}`);
-            // console.log(`testing for date that's parsed ${typeof(Date.parse(commentObj.date))}`);
-            // commentObj.date = createFormatedDate();
-            // console.log(createFormatedDate());
+
             console.log("time stamp is: " + commentObj.timestamp);
     
             event.target.name.placeholder = "Please enter your name";
             event.target.comment.placeholder = "Add a new comment";
             
-            console.log(comments.length);
             comments.push(commentObj);
             console.log(comments.length);
-            console.log("new name is " + commentObj.name);
-            console.log("first name is " + comments[0].name);
       
     
             // sorts the array in decending order
@@ -155,14 +123,13 @@ commentForm.addEventListener("submit", (event) => {
             comments.forEach (c => {
                 console.log(c.name);
             })
+            
             commentForm.reset();
             // clearComments(commentList);
             commentList.innerHTML = "";
             
-            populateComments(comments);
+            renderComments(comments);
             // location.reload();
-
- 
 
         })
         .catch((error) => {
@@ -172,7 +139,7 @@ commentForm.addEventListener("submit", (event) => {
 
 
     } else {
-        // one or both of the fields are empty
+        // one or both fields are empty
         event.target.name.placeholder = "Please enter a name";
         event.target.name.classList.add("form__comment-name--error");
         event.target.comment.placeholder = "Please enter a comment";
@@ -182,8 +149,31 @@ commentForm.addEventListener("submit", (event) => {
 
 });
 
+function getFormatedDate (timeStamp) {
+    const postedDate = new Date(timeStamp);
+    postedDate.toLocaleDateString('en-US');
+     
+    let day = postedDate.getDate() + "";
+    let month = postedDate.getMonth() + "";
+    let year = postedDate.getFullYear() + "";
+    let hoursInSeconds = postedDate.getHours()*3600;
+    let minutesInSeconds = postedDate.getMinutes()*60;
+    let seconds = postedDate.getSeconds();
+    let totalTimeInSec = hoursInSeconds + minutesInSeconds + seconds;
 
-function populateComments (commentsArr) {
+
+    if (postedDate.getMonth()/10 < 1 ) {
+
+        month = "0" + month;
+    }
+    if (postedDate.getDate()/10 < 1 ) {
+        day = "0" + day;
+    }
+    return `${month}/${day}/${year}`;
+} // end getFormatedDate function
+
+
+function renderComments (commentsArr) {
     for (let i = 0; i<3; i++) {
         displayComment(commentsArr[i]);
     }
@@ -200,21 +190,17 @@ function clearComments (parent) {
 
 
 
-// const apiUrl = "https://project-1-api.herokuapp.com/" + getRequest + "?api_key=" + apiKey;
 
 function getAPICommentsData (url) {
  
         axios
         .get(url)
         .then((response) => {
-            // console.log(response)
-            // console.log(response.data);
+
             const commentsData = response.data;
-            // console.log(response.data[0].name);
             commentsData.forEach (comment => {
-                // comment.date = 
                 const commentObj = {};
-                commentObj.date = parseDate(comment.timestamp);
+                // commentObj.date = parseDate(comment.timestamp);
                 commentObj.timestamp = comment.timestamp;
                 commentObj.likes = comment.likes;
                 commentObj.name = comment.name;
@@ -228,104 +214,28 @@ function getAPICommentsData (url) {
             comments.sort( (a,b) => {
                 return b.timestamp - a.timestamp;
             })
-            populateComments(comments);
+            renderComments(comments);
 
         }).catch(error => {
             console.log("Error ", error);
         })
 }
-//   console.log(getAPICommentsData(apiUrl))
+
 getAPICommentsData(apiUrl);
 
 
-console.log("printing Array 111")
-comments.forEach (c => {
-    console.log(c.name);
-})
+
+// function parseDate (commentDate) {
+//     const date = new Date(commentDate);
+//     // console.log(showDate.toLocaleDateString('en-US'));
+//     // date = new Date(Date.now());
+//     // const formatedDate = date.toLocaleDateString('en-US');
+//     const formatedDate = date.toDateString();
+//     return formatedDate;
+// } 
 
 
 
-function parseDate (commentDate) {
-    const date = new Date(commentDate);
-    // console.log(showDate.toLocaleDateString('en-US'));
-    // date = new Date(Date.now());
-    // const formatedDate = date.toLocaleDateString('en-US');
-    const formatedDate = date.toDateString();
-    return formatedDate;
-} 
-
-//   console.log(commentsAPIInfo);
-  
-
-
-
-
-
-
-const commentInfo = {
-    name: "kenan",
-    comment: "comment1"
-};
-
-
-
-function postComment (url, commentObj) {
-
-    // const commentInfo = {
-
-    // };
-
-    // function axiosTest() {
-    //     return axios.get(url).then(response => response.data)
-    // }
-
-    axios
-        .post(url, commentObj)
-        .then((response) => 
-        // console.log("response: ", response);
-
-        // const commentsData = response.data;
-        // commentObj = response.data;
-        // console.log("Likes inside : " + response.data.likes);
-        // console.llo
-        // comments.push(commentObj);
-        // comments.push(commentsData);
-        // console.log("here");
-        //  response.data is the object that was created
-        // console.log(response.data);
-        // commentsData.forEach (comment => {
-        //     console.log(comment.name);
-        // });
-
-        // commentsData.forEach(comment => {
-        //     console.log(comment.name);
-        // });
-
-        // const updatedComments = data.jokes;
-
-        // jokesList.innerHTML = "";
-        // updatedJokes.forEach((joke) => {
-        //     renderJoke(joke.question, joke.answer, jokesList);
-        // });
-
-        // after submission, we clear the form for better use experience!
-        // e.target.question.value = "";
-        // e.target.answer.value = "";
-        // return commentsData;
-        
-        // return the object that is posted
-        response.data
-        )
-        .catch((error) => {
-        console.log("error: ", error);
-        });
-}
-
-// console.log("here")
-// console.log(postComment(apiUrl, commentInfo));
-// console.log("oiks")
-// console.log("liiiiikess" + postComment(apiUrl, commentInfo))
-// console.log(postComment(apiUrl, commentInfo));
 
 
 
