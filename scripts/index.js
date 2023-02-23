@@ -9,30 +9,7 @@ let commentId = "";
 // comment objects
 let comments = [
 
-    // {
-    //     name: "Connor Walton",
-    //     comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-    //     date: "02/17/2021",
-    //     timestanp: 1613537398000
-    // },
-
-    // {
-    //     name: "Emilie Beach",
-    //     comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-    //     date: "01/09/2021",
-    //     timestanp: 1610167798000
-    // },
-
-    // {
-    //     name: "Miles Acosta",
-    //     comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-    //     date: "12/20/2020",
-    //     timestanp: 1639959847000
-    // }
-
 ];
-
-
 
 
 const commentList = document.querySelector(".comment__list");
@@ -103,6 +80,37 @@ function displayComment(comment) {
                 
                 console.log("the array has: " + comments.length + " elements")
                 getAPICommentsData(apiUrl);
+                // renderComments(comments);
+            })
+            .catch(error => {
+                console.log(`Error: ${error}`);
+            })
+        });
+
+        likeCommentIcon.addEventListener("click", event => {
+            // const 
+            console.log("click");
+        })
+
+
+        ///comments/:id/like
+
+        // why are we using delete and put
+        likeCommentIcon.addEventListener("click", event => {
+            // commentId = comment.id;
+            const url = `https://project-1-api.herokuapp.com/${getRequest}/${comment.id}/like/?api_key=${apiKey}`;
+            console.log("click");
+            console.log("printing comment ID: " + comment.id);
+            console.log(url);
+            axios.put(url)
+            .then(response => {
+                
+                // console.log(`The deleted element is: ${response.data}`)
+                // commentList.innerHTML = "";
+                
+                console.log(response.data.likes);
+                // console.log("the array has: " + comments.length + " elements")
+                // getAPICommentsData(apiUrl);
                 // renderComments(comments);
             })
             .catch(error => {
