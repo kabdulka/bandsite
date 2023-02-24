@@ -2,6 +2,8 @@ const apiKey = `fc20d90b-f207-490e-9533-e30b46cf95fc`;
 const getRequest = 'comments';
 const apiUrl = `https://project-1-api.herokuapp.com/${getRequest}?api_key=${apiKey}`;
 let commentId = "";
+// const apiDelete = `https://project-1-api.herokuapp.com/${getRequest}/${comment.id}/?api_key=${apiKey}`;
+
 // const apiDelete = `https://project-1-api.herokuapp.com/${getRequest}/${commentId}/?api_key=${apiKey}`;
 
 //https://project-1-api.herokuapp.com/comments/6f2f6250-0c01-4c08-94cf-d69341b111aa/?api_key=fc20d90b-f207-490e-9533-e30b46cf95fc
@@ -66,59 +68,69 @@ function displayComment(comment) {
         deleteCommentIcon.classList.add("comment__delete");
         
         deleteCommentIcon.addEventListener("click", event => {
-            // commentId = comment.id;
-            const apiDelete = `https://project-1-api.herokuapp.com/${getRequest}/${comment.id}/?api_key=${apiKey}`;
-            console.log("click");
-            console.log("printing comment ID: " + comment.id);
-            console.log(apiDelete);
-            axios.delete(apiDelete)
-            .then(response => {
-        
-                console.log(`The deleted element is: ${response.data}`)
-                commentList.innerHTML = "";
-                
-                
-                console.log("the array has: " + comments.length + " elements")
-                getAPICommentsData(apiUrl);
-                // renderComments(comments);
-            })
-            .catch(error => {
-                console.log(`Error: ${error}`);
-            })
+            deleteComment(comment.id);
         });
 
         likeCommentIcon.addEventListener("click", event => {
             // const 
             console.log("click");
-        })
 
+        });
 
+        
         ///comments/:id/like
-
         // why are we using delete and put
         likeCommentIcon.addEventListener("click", event => {
             // commentId = comment.id;
-            const url = `https://project-1-api.herokuapp.com/${getRequest}/${comment.id}/like/?api_key=${apiKey}`;
-            console.log("click");
-            console.log("printing comment ID: " + comment.id);
-            console.log(url);
-            axios.put(url)
-            .then(response => {
-                
-                // console.log(`The deleted element is: ${response.data}`)
-                // commentList.innerHTML = "";
-                
-                console.log(response.data.likes);
-                // console.log("the array has: " + comments.length + " elements")
-                // getAPICommentsData(apiUrl);
-                // renderComments(comments);
-            })
-            .catch(error => {
-                console.log(`Error: ${error}`);
-            })
+            // const url = `https://project-1-api.herokuapp.com/${getRequest}/${comment.id}/like/?api_key=${apiKey}`;
+            likeComment(comment.id);
         })
 
+
 } // end displayComment function
+
+
+function deleteComment(commentId) {
+    const apiDelete = `https://project-1-api.herokuapp.com/${getRequest}/${commentId}/?api_key=${apiKey}`;
+    console.log("click");
+    console.log("printing comment ID: " + commentId);
+    console.log(apiDelete);
+    
+    axios.delete(apiDelete)
+
+    .then(response => {
+
+        console.log(`The deleted element is: ${response.data}`)
+        // commentList.innerHTML = "";
+        
+        
+        console.log("the array has: " + comments.length + " elements")
+        getAPICommentsData(apiUrl);
+        // renderComments(comments);
+    })
+    .catch(error => {
+        console.log(`Error: ${error}`);
+    })
+}// end delete Comment
+
+function likeComment (commentId) {
+    const url = `https://project-1-api.herokuapp.com/${getRequest}/${commentId}/like/?api_key=${apiKey}`;
+    console.log("click");
+    console.log("printing comment ID: " + commentId);
+    console.log(url);
+
+    axios.put(url)
+    .then(response => {
+
+        console.log(response.data.likes);
+        
+    })
+
+    .catch(error => {
+        console.log(`Error: ${error}`);
+    })
+
+}// end like comment
 
 
 const commentForm = document.querySelector(".form__comment");
@@ -171,12 +183,9 @@ commentForm.addEventListener("submit", (event) => {
             
             commentForm.reset();
             // clearComments(commentList);
-            commentList.innerHTML = "";
+           
             getAPICommentsData(apiUrl);
-            // renderComments(comments);
-            // location.reload();
 
-            
 
         })
         .catch((error) => {
@@ -205,9 +214,8 @@ function getFormatedDate (timeStamp) {
     let seconds = postedDate.getSeconds();
     let totalTimeInSec = hoursInSeconds + minutesInSeconds + seconds;
 
-
     if (postedDate.getMonth()/10 < 1 ) {
-
+        month++;
         month = "0" + month;
     }
     if (postedDate.getDate()/10 < 1 ) {
@@ -218,9 +226,10 @@ function getFormatedDate (timeStamp) {
 
 
 function renderComments (commentsArr) {
-    for (let i = 0; i<3; i++) {
-        displayComment(commentsArr[i]);
-    }
+
+    commentsArr.forEach(element => {
+        displayComment(element);
+    })
 }
 
 
@@ -240,20 +249,19 @@ function getAPICommentsData (url) {
             const commentsData = response.data;
             commentsData.forEach (comment => {
                 const commentObj = {};
-                // commentObj.date = parseDate(comment.timestamp);
                 commentObj.timestamp = comment.timestamp;
                 commentObj.likes = comment.likes;
                 commentObj.name = comment.name;
                 commentObj.id = comment.id;
                 commentObj.comment = comment.comment;
-                console.log(`the time stamp here is: ${commentObj.timestamp}`);
-                // comments.push(commentObj);
-           
+                console.log(`the time stamp here is: ${commentObj.timestamp}`);           
             });
 
             commentsData.sort( (a,b) => {
                 return b.timestamp - a.timestamp;
             })
+
+            commentList.innerHTML = "";
             renderComments(commentsData);
 
         }).catch(error => {
@@ -262,18 +270,6 @@ function getAPICommentsData (url) {
 }
 
 getAPICommentsData(apiUrl);
-
-
-
-// function parseDate (commentDate) {
-//     const date = new Date(commentDate);
-//     // console.log(showDate.toLocaleDateString('en-US'));
-//     // date = new Date(Date.now());
-//     // const formatedDate = date.toLocaleDateString('en-US');
-//     const formatedDate = date.toDateString();
-//     return formatedDate;
-// } 
-
 
 
 
