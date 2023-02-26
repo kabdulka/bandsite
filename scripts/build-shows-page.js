@@ -1,61 +1,12 @@
 // global declarations
 
-let shows = [
-    // {
-    //     date: "Mon Sept 06 2021",
-    //     venue: "Ronald Lane",
-    //     location: "San Francisco, CA"
-    // },
-
-    // {
-    //     date: "Tue Sept 21 2021",
-    //     venue: "Pier 3 East",
-    //     location: "San Francisco, CA"
-    // },
-
-    // {
-    //     date: "Fri Oct 15 2021",
-    //     venue: "View Lounge",
-    //     location: "San Francisco, CA"
-    // },
-    
-    // {
-    //     date: "Sat Nov 06 2021",
-    //     venue: "Hyatt Agency",
-    //     location: "San Francisco, CA"
-    // },
-
-    // {
-    //     date: "Fri Nov 26 2021",
-    //     venue: "Moscow Center",
-    //     location: "San Francisco, CA"
-    // },
-
-    // {
-    //     date: "Wed Dec 15 2021",
-    //     venue: "Press Club",
-    //     location: "San Francisco, CA"
-    // }
-
-];
-
 const showsList = document.querySelector(".shows__list");
-
-//loop through the array
-// for each index, append a chile for each one and add a class
-
-// TODO Make this into a function called display...
-// shows.forEach(show => {
-
 
 function displayShow (show) {
     // create an li element
     const listItem = document.createElement("li");
 
- 
-
-    // give it a class name of shows__item
-    listItem.classList.add("shows__item");
+     listItem.classList.add("shows__item");
     showsList.appendChild(listItem);
 
     const showsInfoDiv = document.createElement("div");
@@ -128,26 +79,18 @@ function displayShow (show) {
         event.currentTarget.classList.add("shows__item--clicked");
     } );
 
-}
-// });
+}// end displayShow function
+
 
 // formats the data 
 function parseDate (showDate) {
     const date = new Date(showDate);
-    // console.log(showDate.toLocaleDateString('en-US'));
-    // date = new Date(Date.now());
-    // const formatedDate = date.toLocaleDateString('en-US');
+
     const formatedDate = date.toDateString();
     return formatedDate;
 } 
-// console.log(Date.now());
 
-// const date = new Date(Date.now());
-// console.log(date)
 console.log(parseDate(Date.now()));
-// console.log(parseDate())
-
-
 
 const showItems = document.querySelectorAll(".shows__item");
 
@@ -161,47 +104,28 @@ function getAPIShowssData (url) {
     .get(url)
     .then((response) => {
         console.log(response.data);
-        // console.log(response.data);
-        // return response.data;
-
-        
+   
         const showsDataApi = response.data;
 
         // traverse all shows returned from the API request
-        // and use them to populate the comments array.
-        // Lastly, push the new show object into the shows Array
         showsDataApi.forEach ( show => {
             const showObj = {};
-            // parseDate(show.date)
-            // Why is the parsed date a day before?
             showObj.date = parseDate(show.date);
             showObj.venue = show.location;
             showObj.location = show.place;
             showObj.id = show.id;
 
-            shows.push(showObj);
+            // shows.push(showObj);
+            displayShow(showObj);
+            
         })
-       
-        // const date = response.data ;
-
-        shows.forEach (show => {
-            console.log(show.venue);
-            console.log(show.date);
-        }) 
-
-        populateShowsUI();
-
-      })
-  }
-
-  console.log(getAPIShowssData(showsUrl))
-//   const showsApiData = getAPIShowssData(showsUrl);
-
-//   console.log(showsApiData[0].place)
+    })
+}
 
 
+getAPIShowssData(showsUrl);
 
-function populateShowsUI () {
+function populateShowsUI (shows) {
     shows.forEach (show => {
         displayShow(show);
     }) 

@@ -1,21 +1,12 @@
 const apiKey = `fc20d90b-f207-490e-9533-e30b46cf95fc`;
 const getRequest = 'comments';
 const apiUrl = `https://project-1-api.herokuapp.com/${getRequest}?api_key=${apiKey}`;
-let commentId = "";
-// const apiDelete = `https://project-1-api.herokuapp.com/${getRequest}/${comment.id}/?api_key=${apiKey}`;
 
-// const apiDelete = `https://project-1-api.herokuapp.com/${getRequest}/${commentId}/?api_key=${apiKey}`;
-
-//https://project-1-api.herokuapp.com/comments/6f2f6250-0c01-4c08-94cf-d69341b111aa/?api_key=fc20d90b-f207-490e-9533-e30b46cf95fc
-// are we going to get the name as a single string or will it be 2 different strings or properties
-// comment objects
 let comments = [
 
 ];
 
-
 const commentList = document.querySelector(".comment__list");
-
 
 function displayComment(comment) {
 
@@ -50,7 +41,6 @@ function displayComment(comment) {
         commentInfoRow2.appendChild(commentText);
 
         name.innerText = comment.name;
-        // change here
         date.innerText = getFormatedDate(comment.timestamp);
         commentText.innerText = comment.comment;
 
@@ -72,41 +62,19 @@ function displayComment(comment) {
         });
 
         likeCommentIcon.addEventListener("click", event => {
-            // const 
-            console.log("click");
-
-        });
-
-        
-        ///comments/:id/like
-        // why are we using delete and put
-        likeCommentIcon.addEventListener("click", event => {
-            // commentId = comment.id;
-            // const url = `https://project-1-api.herokuapp.com/${getRequest}/${comment.id}/like/?api_key=${apiKey}`;
             likeComment(comment.id);
         })
-
 
 } // end displayComment function
 
 
 function deleteComment(commentId) {
     const apiDelete = `https://project-1-api.herokuapp.com/${getRequest}/${commentId}/?api_key=${apiKey}`;
-    console.log("click");
-    console.log("printing comment ID: " + commentId);
-    console.log(apiDelete);
-    
+
     axios.delete(apiDelete)
 
     .then(response => {
-
-        console.log(`The deleted element is: ${response.data}`)
-        // commentList.innerHTML = "";
-        
-        
-        console.log("the array has: " + comments.length + " elements")
         getAPICommentsData(apiUrl);
-        // renderComments(comments);
     })
     .catch(error => {
         console.log(`Error: ${error}`);
@@ -115,15 +83,10 @@ function deleteComment(commentId) {
 
 function likeComment (commentId) {
     const url = `https://project-1-api.herokuapp.com/${getRequest}/${commentId}/like/?api_key=${apiKey}`;
-    console.log("click");
-    console.log("printing comment ID: " + commentId);
-    console.log(url);
 
     axios.put(url)
     .then(response => {
-
         console.log(response.data.likes);
-        
     })
 
     .catch(error => {
@@ -147,9 +110,7 @@ commentForm.addEventListener("submit", (event) => {
         const nameInput = document.querySelector(".form__comment-name");
         event.target.name.classList.remove("form__comment-name--error");
         event.target.comment.classList.remove("form__comment-text--error");
-        // commentObj.name = event.target.name.value;
-        // commentObj.comment = event.target.comment.value;
-        
+
         commentInputObj = {
             name: event.target.name.value,
             comment: event.target.comment.value
@@ -159,33 +120,23 @@ commentForm.addEventListener("submit", (event) => {
         .post(apiUrl, commentInputObj)
         .then((response) => {
             const commentObj = response.data;
-            console.log(`printing Object info: likes: ${commentObj.likes}, name: ${commentObj.name}`);
-
-            console.log("time stamp is: " + commentObj.timestamp);
     
             event.target.name.placeholder = "Please enter your name";
             event.target.comment.placeholder = "Add a new comment";
-            
-            // comments.push(commentObj);
-            console.log(commentObj.id);
-      
-            
+                        
             // sorts the array in decending order
             // another way to solve this problem is to only display the last 3 elements of an array
             comments.sort ( (a,b) => {
                 return b.timestamp - a.timestamp;
             }) 
 
-            console.log("printing Array")
             comments.forEach (c => {
                 console.log(c.name);
             })
             
             commentForm.reset();
-            // clearComments(commentList);
            
             getAPICommentsData(apiUrl);
-
 
         })
         .catch((error) => {
@@ -267,11 +218,9 @@ function getAPICommentsData (url) {
         }).catch(error => {
             console.log("Error ", error);
         })
-}
+}// end get APi comments function
 
 getAPICommentsData(apiUrl);
-
-
 
 
 function timeSince(date) {

@@ -786,6 +786,7 @@ a {
   padding: 0.75rem;
   border: 0.0625rem solid #E1E1E1;
   background-color: #FAFAFA;
+  resize: none;
 }
 .form__comment-text::-moz-placeholder {
   color: black;

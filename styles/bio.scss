@@ -393,8 +393,6 @@
                     color: red;
                 }   
             }
-
-
         }
 
         &-label {
@@ -413,7 +411,7 @@
             padding: 0.75rem;
             border: 0.0625rem solid $mercury;
             background-color: $albaster;
-    
+            resize: none;
     
             &::placeholder {
                 color: black;
