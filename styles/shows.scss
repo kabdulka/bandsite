@@ -202,6 +202,14 @@ iframe {
             }
         }
 
+        // make sure that title headers are not highlight-able
+        &--allow {
+            &:hover {
+                background-color: white;
+            }
+            
+        }
+
         @include tablet {
             flex-direction: row;
             margin: auto;
@@ -260,9 +268,13 @@ iframe {
         &--allow {
             display: none;
 
+  
+
             @include tablet {
+
                 display: flex;
                 font-size: 0.75rem;
+                
             }
         }
     }
@@ -316,6 +328,7 @@ iframe {
             @include tablet {
                 display: flex;
                 font-size: 0.75rem;
+
 
             }
         }
@@ -373,6 +386,7 @@ iframe {
             @include tablet {
                 display: flex;
                 font-size: 0.75rem;
+
 
             }
         }

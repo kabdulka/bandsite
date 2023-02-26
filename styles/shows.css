@@ -592,6 +592,9 @@ iframe {
 .shows__item--clicked:hover {
   background-color: #E1E1E1;
 }
+.shows__item--allow:hover {
+  background-color: white;
+}
 @media (min-width: 768px) {
   .shows__item {
     flex-direction: row;

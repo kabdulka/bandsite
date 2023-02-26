@@ -713,6 +713,7 @@ a {
   border-radius: 4px;
   font-size: 0.875rem;
   width: 100%;
+  cursor: pointer;
 }
 @media (min-width: 768px) {
   .form__comment-btn {
