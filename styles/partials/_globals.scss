@@ -166,8 +166,7 @@ body * {
     padding-left: 1rem;
     height: 11.75rem;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('../assets/Images/hero-bio.jpg') center/cover;
-    height: 20rem;
-
+    height: 45vw;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -192,14 +191,6 @@ body * {
             height: 45rem;
             padding: 11rem 8rem 2rem 8rem;
         }
-    }
-
-    @include tablet {
-        height: 35rem;
-    }
-
-    @include desktop {
-        height: 45rem;
     }
     
 }

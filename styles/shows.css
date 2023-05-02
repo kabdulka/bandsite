@@ -153,7 +153,7 @@ a {
   padding-left: 1rem;
   height: 11.75rem;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url("../assets/Images/hero-bio.jpg") center/cover;
-  height: 20rem;
+  height: 45vw;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -179,16 +179,6 @@ a {
   .hero-background--shows {
     height: 45rem;
     padding: 11rem 8rem 2rem 8rem;
-  }
-}
-@media (min-width: 768px) {
-  .hero-background {
-    height: 35rem;
-  }
-}
-@media (min-width: 1280px) {
-  .hero-background {
-    height: 45rem;
   }
 }
 
