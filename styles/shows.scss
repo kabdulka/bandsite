@@ -227,6 +227,7 @@ iframe {
             display: none;
             @include tablet {
                 display: block;
+                padding-bottom: 0.5rem;
             }
         }
     }
@@ -246,7 +247,7 @@ iframe {
         }
 
         @include desktop {
-
+            width: 48%;
         }
         
     }
@@ -299,13 +300,14 @@ iframe {
         @include tablet {
 
             display: flex;
-            width: 33%;
+            width: 42%;
             justify-content: center;
 
         }
 
         @include desktop {
-            padding-left: 3rem;
+            // padding-left: 3rem;
+            width: 33%;
         }
     }
 

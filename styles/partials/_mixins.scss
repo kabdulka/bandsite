@@ -12,15 +12,14 @@
   }
 }
 
-// Do this later
-@mixin mobile {
-    // @media (min-width: variables.$mobile-width) {
-    //     @content;
-    // }
-    @media (min-width: $mobile-width) {
-        @content;
-    }
-}
+// @mixin mobile {
+//     // @media (min-width: variables.$mobile-width) {
+//     //     @content;
+//     // }
+//     @media (min-width: $mobile-width) {
+//         @content;
+//     }
+// }
 // max-width: $desktop-width
 
 @mixin heading-text {

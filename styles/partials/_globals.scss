@@ -32,8 +32,6 @@ body * {
     display: flex;
     flex-direction: column;
 
-
-
     @include tablet {
 
         flex-direction: row;
@@ -50,22 +48,16 @@ body * {
 
     &__logo-container {
 
-            padding-top: 0.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
+        padding-top: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
 
             
-            &__image {
-                    height: 1.2rem;
-
-                @include tablet {
-
-                }
-
-                @include desktop {
-                }
+        &__image {
+            height: 1.2rem;
+            
             }
 
         @include tablet {
@@ -84,7 +76,7 @@ body * {
 }
 
 .nav {
-        height: 50%;
+    height: 50%;
 
     @include tablet {
         height: 100%;
@@ -92,11 +84,11 @@ body * {
 
     &__list {
 
-            height: 100%;
-            width: 100%;
-            display: flex;
-            list-style: none;
-            justify-content: space-around;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
 
         @include tablet {
             gap: 3.4rem;
@@ -117,16 +109,10 @@ body * {
             font-size: 0.8rem;
             font-weight: 500;
             padding-bottom: 0.5rem;
-// here
-                &--active {
-                    font-weight: 600;
-                }
 
-
-        @include tablet {
-
-            
-        }
+            &--active {
+                font-weight: 600;
+            }
 
         @include desktop {
             font-size: 0.875rem;
@@ -135,11 +121,10 @@ body * {
 
     &__item {
 
-
-            width: 50%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
 
 
     }
@@ -178,8 +163,7 @@ body * {
 }
 
 .hero-background {
-
-
+    padding-left: 1rem;
     height: 11.75rem;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('../assets/Images/hero-bio.jpg') center/cover;
     height: 20rem;
@@ -222,10 +206,9 @@ body * {
 
 .hero-text {
  
-
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: $white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $white;
 
     @include tablet {
         font-size: 3.85rem;
@@ -240,7 +223,6 @@ body * {
 // ------------------------------------------------------------ Footer ------------------------------------------------------------
 
 .footer {
-
 
     background-color: $bandSite-Black;
     color: $white;
@@ -259,9 +241,6 @@ body * {
 } // end footer
 
 .footer-wrapper {
-    @include mobile {
-
-    }
 
     @include tablet {
         position: relative;
@@ -273,11 +252,11 @@ body * {
 }
 
 .footer-intro {
-    @include mobile {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
 
     @include tablet {
         flex-direction: row;
@@ -292,11 +271,11 @@ body * {
 }
 
 .footer-title {
-    @include mobile {
-        font-weight: 600;
-        font-size: 1.5rem;
-        color: $white;
-    }
+
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: $white;
+
 
     @include tablet {
         font-size: 2.2rem;
@@ -311,13 +290,12 @@ body * {
 }
 
 .flex-container {
-    @include mobile {
-        color: $white;
-        display: flex;
-        flex-direction: column;
-        margin-top: 0.5rem;
-        gap: 1rem;
-    }
+
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    gap: 1rem;
 
     @include tablet {
         margin-top: 1.5rem;
@@ -330,9 +308,6 @@ body * {
 }
 
 .filler {
-    @include mobile {
-
-    }
 
     @include tablet {
         width: 67%;
@@ -344,12 +319,10 @@ body * {
 }
 
 .icon-container {
-    @include mobile {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 
-    }
 
     @include tablet {
         position: absolute;
@@ -366,8 +339,8 @@ body * {
 
     &__image {
 
-            height: 1.45rem;
-            width: 1.5rem;
+        height: 1.45rem;
+        width: 1.5rem;
 
         @include tablet {
             height: 1.6rem;
@@ -381,17 +354,11 @@ body * {
 
 
 .contact {
-    // border: red solid;
-    @include mobile {
 
-        font-size: 0.875rem;
+    font-size: 0.875rem;
         
-        &__container {
-            // border: blue;
-            @include mobile {
-                margin-top: 1rem;
-            }
-        }
+    &__container {
+        margin-top: 1rem;
     }
 
     @include tablet {
@@ -409,25 +376,17 @@ body * {
 
     &__name, &__org {
 
-        @include mobile {
-            font-size: 0.875rem;
-            font-weight: 600;
-        }
+        font-size: 0.875rem;
+        font-weight: 600;
 
         @include tablet {
             font-size: 0.875rem;
             font-weight: 600;
         }
 
-        @include desktop {
-           // No need 
-        }
     }
 
     &__details, &__address {
-
-        @include mobile {
-        }
 
         @include tablet {
             font-size: 0.875rem;
@@ -457,11 +416,9 @@ body * {
 }
 
 .footer__logo-image {
-    @include mobile {
-        max-height: 1.25rem;
-        max-width: 7rem;
-        margin-top: 4.5rem;
-    }
+    max-height: 1.25rem;
+    max-width: 7rem;
+    margin-top: 4.5rem;
 
     @include tablet {
         max-height: 1.75rem;
@@ -471,10 +428,8 @@ body * {
 
 .copyright {
 
-    @include mobile {
-        font-size: 0.7rem;
-        margin-top: 1rem;
-    }
+    font-size: 0.7rem;
+    margin-top: 1rem;
 
     @include tablet {
         margin-top: 3rem;

@@ -6,7 +6,7 @@ function displayShow (show) {
     // create an li element
     const listItem = document.createElement("li");
 
-     listItem.classList.add("shows__item");
+    listItem.classList.add("shows__item");
     showsList.appendChild(listItem);
 
     const showsInfoDiv = document.createElement("div");
@@ -111,11 +111,10 @@ function getAPIShowssData (url) {
         showsDataApi.forEach ( show => {
             const showObj = {};
             showObj.date = parseDate(show.date);
-            showObj.venue = show.location;
-            showObj.location = show.place;
+            showObj.venue = show.place;
+            showObj.location = show.location;
             showObj.id = show.id;
 
-            // shows.push(showObj);
             displayShow(showObj);
             
         })
