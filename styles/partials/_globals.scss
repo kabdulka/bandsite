@@ -1,12 +1,11 @@
 @use './variables' as *;
 @use './mixins' as *;
-
 @use './fonts' as *;
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'AvenirNext LT Pro', arial;
+    font-family: $regular-font, "italics";
     box-sizing: border-box;
 }
 
@@ -15,6 +14,7 @@ body * {
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
+    font-family: $regular-font;
   }
   
   
@@ -107,11 +107,11 @@ body * {
             justify-content: center;
             align-items: center;
             font-size: 0.8rem;
-            font-weight: 500;
+            font-family: $regular-font;
             padding-bottom: 0.5rem;
 
             &--active {
-                font-weight: 600;
+                font-family: $demi-font;
             }
 
         @include desktop {
@@ -133,7 +133,7 @@ body * {
 
             text-decoration: none;
             color: $silver;
-            font-weight: 700;
+     
             width: 100%;
             text-align: center;
 
@@ -148,7 +148,6 @@ body * {
 
     &__link--active {
             color: white;
-            font-weight: 700;
             width: 100%;
             border-bottom: white 0.2rem solid;
 
@@ -167,12 +166,17 @@ body * {
     height: 11.75rem;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('../assets/Images/hero-bio.jpg') center/cover;
     height: 45vw;
+    min-height: 20rem;
     display: flex;
     align-items: center;
     gap: 1rem;
 
     @include tablet {
         padding-left: 2rem;
+    }
+
+    @include desktop {
+        padding-left: 8rem;
     }
 
     &--shows {
@@ -192,13 +196,12 @@ body * {
             padding: 11rem 8rem 2rem 8rem;
         }
     }
-    
 }
 
 .hero-text {
  
     font-size: 1.5rem;
-    font-weight: 600;
+    font-family: $demi-font;
     color: $white;
 
     @include tablet {
@@ -209,7 +212,6 @@ body * {
         font-size: 3.75rem;
     }
 }
-
 
 // ------------------------------------------------------------ Footer ------------------------------------------------------------
 
@@ -263,7 +265,7 @@ body * {
 
 .footer-title {
 
-    font-weight: 600;
+    font-family: $demi-font;
     font-size: 1.5rem;
     color: $white;
 
@@ -368,11 +370,11 @@ body * {
     &__name, &__org {
 
         font-size: 0.875rem;
-        font-weight: 600;
+        font-family: $demi-font;
 
         @include tablet {
             font-size: 0.875rem;
-            font-weight: 600;
+            // font-family: $demi-font;
         }
 
     }

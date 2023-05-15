@@ -1,21 +1,19 @@
 @font-face {
-  font-family: "avenir";
-  src: url(../../assets/Font/AvenirNextLTPro-Regular.otf);
-  font-weight: 400;
+  font-family: "Avenir Next Regular";
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf");
 }
 @font-face {
-  font-family: "avenir";
-  src: url(../../assets/Font/AvenirNextLTPro-Bold.otf);
-  font-weight: 700;
+  font-family: "Avenir Next Demi";
+  src: url("../assets/Font/AvenirNextLTPro-Demi.otf");
 }
-* {
-  font-family: "avenir";
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf");
 }
-
 body {
   margin: 0;
   padding: 0;
-  font-family: "AvenirNext LT Pro", arial;
+  font-family: "Avenir Next Regular", "italics";
   box-sizing: border-box;
 }
 
@@ -24,6 +22,7 @@ body * {
   padding: 0;
   text-decoration: none;
   box-sizing: border-box;
+  font-family: "Avenir Next Regular";
 }
 
 a {
@@ -108,11 +107,11 @@ a {
   justify-content: center;
   align-items: center;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-family: "Avenir Next Regular";
   padding-bottom: 0.5rem;
 }
 .nav__anchor-container--active {
-  font-weight: 600;
+  font-family: "Avenir Next Demi";
 }
 @media (min-width: 1280px) {
   .nav__anchor-container {
@@ -128,7 +127,6 @@ a {
 .nav__link {
   text-decoration: none;
   color: #AFAFAF;
-  font-weight: 700;
   width: 100%;
   text-align: center;
 }
@@ -139,7 +137,6 @@ a {
 }
 .nav__link--active {
   color: white;
-  font-weight: 700;
   width: 100%;
   border-bottom: white 0.2rem solid;
 }
@@ -154,6 +151,7 @@ a {
   height: 11.75rem;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url("../assets/Images/hero-bio.jpg") center/cover;
   height: 45vw;
+  min-height: 20rem;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -161,6 +159,11 @@ a {
 @media (min-width: 768px) {
   .hero-background {
     padding-left: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-background {
+    padding-left: 8rem;
   }
 }
 .hero-background--shows {
@@ -184,7 +187,7 @@ a {
 
 .hero-text {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-family: "Avenir Next Demi";
   color: #ffffff;
 }
 @media (min-width: 768px) {
@@ -241,7 +244,7 @@ a {
 }
 
 .footer-title {
-  font-weight: 600;
+  font-family: "Avenir Next Demi";
   font-size: 1.5rem;
   color: #ffffff;
 }
@@ -340,12 +343,11 @@ a {
 }
 .contact__name, .contact__org {
   font-size: 0.875rem;
-  font-weight: 600;
+  font-family: "Avenir Next Demi";
 }
 @media (min-width: 768px) {
   .contact__name, .contact__org {
     font-size: 0.875rem;
-    font-weight: 600;
   }
 }
 @media (min-width: 768px) {
@@ -394,7 +396,7 @@ a {
 }
 .main__title {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-family: "Avenir Next Demi";
   margin-top: 1.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -404,13 +406,13 @@ a {
     padding-left: 2rem;
     padding-right: 2rem;
     font-size: 2.315rem;
-    font-weight: 600;
     margin-top: 3rem;
   }
 }
 @media (min-width: 1280px) {
   .main__title {
     padding-left: 8rem;
+    padding-right: 8rem;
     font-size: 2.25rem;
   }
 }
@@ -439,38 +441,32 @@ a {
 }
 .about__image {
   width: 100%;
-  height: auto;
+  height: 50vw;
   -o-object-fit: cover;
      object-fit: cover;
   aspect-ratio: 16/9;
 }
 @media (min-width: 768px) {
   .about__image {
-    height: 25rem;
     margin-top: 2.25rem;
-  }
-}
-@media (min-width: 1280px) {
-  .about__image {
-    height: 40rem;
   }
 }
 .about__quote {
   line-height: 1.75;
-  font-weight: 600;
+  font-family: "Avenir Next Demi";
   font-size: 0.875rem;
   margin-top: 0.5rem;
 }
 @media (min-width: 768px) {
   .about__quote {
     line-height: 1.5;
-    font-weight: 600;
+    font-family: "Avenir Next Demi";
     font-size: 1.325rem;
     margin-top: 1rem;
   }
   .about__quote--tablet {
     line-height: 1.5;
-    font-weight: 600;
+    font-family: "Avenir Next Demi";
     font-size: 1rem;
     margin-top: 0.5rem;
   }
@@ -478,13 +474,11 @@ a {
 @media (min-width: 1280px) {
   .about__quote {
     line-height: 1.5;
-    font-weight: 600;
     font-size: 1.35rem;
     margin-top: 1rem;
   }
   .about__quote--desktop {
     line-height: 2;
-    font-weight: 600;
     font-size: 1rem;
     margin-top: 0.5rem;
   }
@@ -501,21 +495,20 @@ a {
 .band__title {
   margin-top: 2rem;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-family: "Avenir Next Demi";
 }
 @media (min-width: 768px) {
   .band__title {
     margin-bottom: 0.5rem;
     margin-top: 1rem;
     font-size: 1.5rem;
-    font-weight: 600;
   }
 }
 @media (min-width: 1280px) {
   .band__title {
     margin-top: 1rem;
     font-size: 1.55rem;
-    font-weight: 525;
+    font-family: 525;
   }
 }
 @media (min-width: 768px) {
@@ -528,7 +521,6 @@ a {
   font-size: 0.875rem;
   line-height: 1.5;
   margin-top: 1rem;
-  font-weight: 500;
 }
 @media (min-width: 768px) {
   .band__description-text {
@@ -540,7 +532,6 @@ a {
   .band__description-text {
     line-height: 1.75;
     margin-top: 1rem;
-    font-weight: 500;
     font-size: 0.875rem;
   }
 }
@@ -568,7 +559,7 @@ a {
 }
 .photo-galary__title {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-family: "Avenir Next Demi";
   margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -620,7 +611,7 @@ a {
 }
 .form__title {
   font-size: 1.55rem;
-  font-weight: 600;
+  font-family: "Avenir Next Demi";
   margin-top: 1rem;
 }
 @media (min-width: 768px) {
@@ -699,15 +690,14 @@ a {
 .form__comment-name::-moz-placeholder {
   color: black;
   font-size: 0.85rem;
-  font-family: "AvenirNext LT Pro";
 }
 .form__comment-name::placeholder {
   color: black;
   font-size: 0.85rem;
-  font-family: "AvenirNext LT Pro";
 }
 .form__comment-name:focus {
-  outline: 2px solid black;
+  border: 2px solid black;
+  outline: none;
 }
 @media (min-width: 768px) {
   .form__comment-name {
@@ -728,7 +718,7 @@ a {
 }
 .form__comment-label {
   color: #AFAFAF;
-  font-weight: 600;
+  font-family: "Avenir Next Demi";
   font-size: 0.6rem;
 }
 @media (min-width: 768px) {
@@ -747,12 +737,12 @@ a {
 .form__comment-text::-moz-placeholder {
   color: black;
   font-size: 0.85rem;
-  font-family: "AvenirNext LT Pro";
+  font-family: "Avenir Next Regular";
 }
 .form__comment-text::placeholder {
   color: black;
   font-size: 0.85rem;
-  font-family: "AvenirNext LT Pro";
+  font-family: "Avenir Next Regular";
 }
 .form__comment-text:focus {
   outline: 2px solid black;
@@ -847,7 +837,7 @@ a {
 }
 .comment__name {
   font-size: 0.875rem;
-  font-weight: 600;
+  font-family: "Avenir Next Demi";
 }
 @media (min-width: 768px) {
   .comment__name {

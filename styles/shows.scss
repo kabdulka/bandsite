@@ -2,7 +2,6 @@
 @use './partials/mixins' as *;
 @use './partials/variables' as *;
 @use './partials/globals' as *;
-@use './partials/fonts' as *;
 
 
 // global declarations
@@ -10,7 +9,6 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'AvenirNext LT Pro';
     
 }
 
@@ -72,6 +70,7 @@ img {
 
     @include desktop {
         flex-direction: row;
+        align-items: end;
         gap: 7rem;
         width: 100%;
     }
@@ -79,11 +78,16 @@ img {
 
 iframe {
     width: 100%;
-    height: 7rem;
+    height: 4rem;
+
+    @include tablet {
+        height: 7rem;
+    }
 }
 
 .sound__cloud {
 
+    width: 100%;
 
     @include tablet {
         width: 75%;
@@ -133,7 +137,7 @@ iframe {
 
                 font-size: 0.75rem;
                 color: $silver;
-                font-weight: 600;
+                font-family: $bold-font;
             }
 
         }
@@ -148,7 +152,7 @@ iframe {
     }
 
     &__title {
-        font-weight: 600;
+        font-family: $demi-font;
         margin-top: 1rem;
         margin-bottom: 0.5rem;
         padding-left: 1rem;
@@ -254,7 +258,7 @@ iframe {
 
     &__date-title {
         font-size: 0.6rem;
-        font-weight: 600;
+        font-family: $demi-font;
         color: $silver;
         text-transform: uppercase;
 
@@ -282,7 +286,7 @@ iframe {
 
     &__date-value {
         font-size: 0.825rem;
-        font-weight: 600;
+        font-family: $bold-font;
 
         @include tablet {
             font-size: 0.875rem;
@@ -313,7 +317,7 @@ iframe {
 
     &__venue-title {
         font-size: 0.6rem;
-        font-weight: 600;
+        font-family: $demi-font;
         color: $silver;
         text-transform: uppercase;
 
@@ -338,7 +342,7 @@ iframe {
 
     &__venue-value {
         font-size: 0.825rem;
-        font-weight: 500;
+        font-family: $regular-font;
 
         @include tablet {
             font-size: 0.875rem;
@@ -371,7 +375,7 @@ iframe {
     &__location-title {
 
         font-size: 0.6rem;
-        font-weight: 600;
+        font-family: $demi-font;
         color: $silver;
         text-transform: uppercase;
 
@@ -396,7 +400,7 @@ iframe {
 
     &__location-value {
         font-size: 0.825rem;
-        font-weight: 500;
+        font-family: $regular-font;
 
         @include tablet {
             font-size: 0.875rem;
@@ -458,7 +462,7 @@ iframe {
     
     color: $white;
     font-size: 1rem;
-    font-weight: 600;
+    font-family: $regular-font;
     margin:auto;
 
 }

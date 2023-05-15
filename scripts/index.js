@@ -8,6 +8,8 @@ let comments = [
 
 const commentList = document.querySelector(".comment__list");
 
+
+
 function displayComment(comment) {
 
         const commentItem = document.createElement("li");
@@ -61,12 +63,19 @@ function displayComment(comment) {
             deleteComment(comment.id);
         });
 
+        // deleteIcons
+
         likeCommentIcon.addEventListener("click", event => {
             likeComment(comment.id);
         })
 
 } // end displayComment function
 
+const deleteCommentIcon = () => {
+    deleteCommentIcon.addEventListener("click", event => {
+        deleteComment(comment.id);
+    });
+}
 
 function deleteComment(commentId) {
     const apiDelete = `https://project-1-api.herokuapp.com/${getRequest}/${commentId}/?api_key=${apiKey}`;
@@ -253,3 +262,5 @@ function timeSince(date) {
   
     return Math.floor(seconds) + " second" + (Math.floor(seconds) === 1 ? "" : "s") + " ago";
   };
+
+
